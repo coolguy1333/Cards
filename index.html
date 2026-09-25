@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>APUSH Notecards</title>
+<style>
+  :root{
+    --bg:#f4f5f7; --card-bg:#ffffff; --front-header:#ffe3e3; --front-line:#ef5350;
+    --front-text:#e53935; --back-header:#dbe9fd; --back-line:#2962ff; --back-text:#1e5fd9;
+    --ink:#1a1a2e; --blue:#2962ff; --red:#e53935; --purple:#8e24aa; --gray:#555;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15161a; --card-bg:#202127; --ink:#eee; --gray:#bbb;
+    }
+  }
+  :root[data-theme="dark"]{ --bg:#15161a; --card-bg:#202127; --ink:#eee; --gray:#bbb; }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  a{ color:inherit; }
+  .site-header{
+    background:var(--card-bg); border-bottom:1px solid rgba(128,128,128,.25);
+    padding:calc(14px + env(safe-area-inset-top,0px)) 20px 14px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    position:sticky; top:0; z-index:10;
+  }
+  .site-header .logo{ font-weight:900; font-size:1.15rem; }
+  .site-header .logo span{ color:var(--blue); }
+  .site-nav{ display:flex; gap:16px; font-size:0.88rem; font-weight:600; }
+  .site-nav a{ text-decoration:none; opacity:.8; }
+  .site-nav a:hover{ opacity:1; text-decoration:underline; }
+  main{ padding:20px; padding-bottom:calc(20px + env(safe-area-inset-bottom,0px)); }
+  .hero{
+    max-width:900px; margin:6px auto 18px; text-align:center;
+  }
+  h1{ text-align:center; font-size:1.5rem; margin:6px 0 4px; }
+  .sub{ text-align:center; color:var(--gray); margin-bottom:6px; font-size:0.9rem; }
+  .site-footer{
+    text-align:center; color:var(--gray); font-size:0.78rem; padding:26px 20px 40px;
+    border-top:1px solid rgba(128,128,128,.25); margin-top:30px;
+  }
+  .module-title{
+    max-width:900px; margin:26px auto 10px; font-weight:700; font-size:1.05rem;
+    border-left:4px solid var(--blue); padding-left:10px;
+  }
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:18px; max-width:900px; margin:0 auto;
+  }
+  .flip-card{ perspective:1200px; aspect-ratio: 3 / 2; width:100%; cursor:pointer; }
+  .flip-inner{
+    position:relative; width:100%; height:100%; text-align:left;
+    transition:transform .5s; transform-style:preserve-3d; border-radius:10px;
+    box-shadow:0 1px 4px rgba(0,0,0,.15);
+  }
+  .flip-card.flipped .flip-inner{ transform:rotateY(180deg); }
+  .face{
+    position:absolute; inset:0; backface-visibility:hidden;
+    border-radius:10px; background:var(--card-bg); overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .back{ transform:rotateY(180deg); }
+  .face-header{
+    padding:10px 14px; font-weight:800; font-size:0.72rem; letter-spacing:.05em;
+  }
+  .front .face-header{ display:none; }
+  .back .face-header{ display:none; }
+  .front{ border-top:4px solid var(--front-line); }
+  .back{ border-top:4px solid var(--back-line); transform:rotateY(180deg); }
+  .front .body{
+    flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:10px; text-align:center;
+  }
+  .front .term{ font-weight:800; font-size:1.6rem; line-height:1.25; }
+  .front .period{ color:var(--blue); font-weight:700; margin-top:12px; font-size:1rem; }
+  .back .body{
+    padding:16px 20px; font-size:1rem; line-height:1.5; overflow-y:auto;
+    height:100%; box-sizing:border-box; display:flex; flex-direction:column;
+    justify-content:center; gap:10px;
+  }
+  .meta{
+    font-size:0.82rem; text-transform:uppercase; letter-spacing:.04em; color:var(--gray);
+    font-weight:700; padding-bottom:9px; border-bottom:1px solid rgba(128,128,128,.25);
+  }
+  .meta b{ color:var(--ink); font-weight:800; }
+  .b{ color:var(--blue); font-weight:600; }
+  .r{ color:var(--red); }
+  .p{ color:var(--purple); }
+  .hint{ text-align:center; color:var(--gray); font-size:0.8rem; margin-top:24px; }
+  .period-title{
+    max-width:900px; margin:34px auto 4px; font-size:1.15rem; font-weight:800;
+    text-align:center;
+  }
+  .controls{
+    max-width:900px; margin:0 auto 6px; display:flex; gap:10px; flex-wrap:wrap;
+    align-items:center; position:sticky; top:env(safe-area-inset-top,0px); z-index:5;
+    background:var(--bg); padding:10px 0;
+  }
+  .controls input, .controls select{
+    padding:8px 10px; border-radius:8px; border:1px solid #ccc; font-size:0.85rem;
+    background:var(--card-bg); color:var(--ink);
+  }
+  .controls input{ flex:1; min-width:140px; }
+  .controls button{
+    padding:8px 12px; border-radius:8px; border:1px solid #ccc; background:var(--card-bg);
+    color:var(--ink); font-size:0.85rem; cursor:pointer;
+  }
+  .controls button.primary{ background:var(--blue); color:#fff; border-color:var(--blue); font-weight:700; }
+  .range-controls{ top:calc(env(safe-area-inset-top,0px) + 44px); }
+  .range-label{
+    display:flex; align-items:center; gap:6px; font-size:0.8rem; color:var(--gray);
+    font-weight:600; white-space:nowrap;
+  }
+  .range-label select, .range-label input{
+    padding:7px 8px; border-radius:8px; border:1px solid #ccc; font-size:0.85rem;
+    background:var(--card-bg); color:var(--ink); width:88px;
+  }
+  .range-to{ color:var(--gray); font-size:0.78rem; }
+  .count{ text-align:center; color:var(--gray); font-size:0.8rem; margin:4px 0 2px; }
+  .no-results{ text-align:center; color:var(--gray); margin-top:30px; }
+
+  /* study mode */
+  #studyOverlay{
+    position:fixed; inset:0; background:var(--bg); z-index:100; display:none;
+    flex-direction:column; padding:env(safe-area-inset-top,0px) 16px env(safe-area-inset-bottom,0px);
+  }
+  #studyOverlay.open{ display:flex; }
+  .study-topbar{
+    display:flex; align-items:center; justify-content:space-between; padding:14px 2px;
+  }
+  .study-topbar .study-counter{ color:var(--gray); font-size:0.85rem; }
+  .study-topbar button{
+    background:none; border:none; font-size:1.4rem; color:var(--ink); cursor:pointer; line-height:1;
+    padding:4px 8px;
+  }
+  .study-stage{ flex:1; display:flex; align-items:center; justify-content:center; min-height:0; }
+  .study-card{ width:min(94vw, 900px); aspect-ratio:3/2; height:auto; max-height:80vh; }
+  .study-card .flip-inner{ box-shadow:0 4px 18px rgba(0,0,0,.2); }
+  .study-card .front .term{ font-size:clamp(2rem, 5.2vw, 3.2rem); }
+  .study-card .back .body{ font-size:clamp(1.1rem, 2.8vw, 1.7rem); line-height:1.5; padding:clamp(20px,3vw,36px) clamp(24px,3.5vw,40px); gap:clamp(10px,1.6vw,18px); }
+  .study-card .back .meta{ font-size:clamp(0.8rem, 1.6vw, 1.05rem); padding-bottom:clamp(8px,1.2vw,14px); }
+  .study-navbar{
+    display:flex; align-items:center; justify-content:center; gap:20px; padding:16px 0 20px;
+  }
+  .study-navbar button{
+    padding:12px 22px; border-radius:10px; border:none; background:var(--blue); color:#fff;
+    font-weight:700; font-size:0.95rem; cursor:pointer;
+  }
+  .study-navbar button.secondary{ background:var(--card-bg); color:var(--ink); border:1px solid #ccc; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">APUSH<span>Cards</span></div>
+  <nav class="site-nav">
+    <a href="#period-1">Period 1</a>
+    <a href="#period-2">Period 2</a>
+    <a href="#period-3">Period 3</a>
+    <a href="#" id="navStudy">Study Mode</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <h1>APUSH Notecards</h1>
+  <div class="sub">Tap a card to flip. Search, filter, or jump into Study Mode to run through them one by one.</div>
+</div>
+<div class="controls">
+  <input id="search" type="text" placeholder="Search terms, dates, themes...">
+  <select id="periodFilter"><option value="">All Periods</option></select>
+</div>
+<div class="controls range-controls">
+  <label class="range-label">Module
+    <select id="moduleFromFilter"><option value="">Any</option></select>
+    <span class="range-to">to</span>
+    <select id="moduleToFilter"><option value="">Any</option></select>
+  </label>
+  <label class="range-label">Year
+    <input id="yearFromFilter" type="number" placeholder="e.g. 1607" inputmode="numeric">
+    <span class="range-to">to</span>
+    <input id="yearToFilter" type="number" placeholder="e.g. 1754" inputmode="numeric">
+  </label>
+  <button id="clearBtn">Clear</button>
+  <button id="studyBtn" class="primary">Study Mode</button>
+</div>
+<div class="count" id="count"></div>
+<div id="root"></div>
+<div class="hint">Tap any card to flip it back.</div>
+</main>
+<footer class="site-footer">APUSH Notecards &mdash; Periods 1 &amp; 2 (1491&ndash;1754)</footer>
+
+<div id="studyOverlay">
+  <div class="study-topbar">
+    <button id="studyClose" aria-label="Close">&times;</button>
+    <div class="study-counter" id="studyCounter"></div>
+    <div style="width:32px"></div>
+  </div>
+  <div class="study-stage">
+    <div class="study-card flip-card" id="studyCard">
+      <div class="flip-inner">
+        <div class="face front">
+          <div class="body">
+            <div class="term" id="studyTerm"></div>
+            <div class="period" id="studyPeriod"></div>
+          </div>
+        </div>
+        <div class="face back">
+          <div class="body">
+            <div class="meta" id="studyMeta"></div>
+            <div id="studyText"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="study-navbar">
+    <button class="secondary" id="studyPrev">&larr; Prev</button>
+    <button id="studyNext">Next &rarr;</button>
+  </div>
+</div>
+
+<script>
+const period1Label = "Period 1: 1491–1607";
+const period2Label = "Period 2: 1607–1754";
+
+const data1 = [
+{mod:1, term:"Mesoamerican Indians", date:"pre-1492", theme:"Culture and Society", html:`<span class="b">Mesoamerican peoples</span> like the <span class="r">Aztec built large cities with complex farming, trade, and religion</span>. <span class="p">Their dense populations and wealth later drew Spanish conquest.</span>`},
+{mod:1, term:"Southwestern Indians", date:"pre-1492", theme:"Geography and Environment", html:`<span class="b">Southwestern peoples</span> like the <span class="r">Pueblo built irrigation systems and adobe villages in a dry environment</span>. <span class="p">Their farming adapted closely to a harsh desert landscape.</span>`},
+{mod:1, term:"Northwest Indians", date:"pre-1492", theme:"Geography and Environment", html:`<span class="b">Northwest peoples</span> relied on <span class="r">abundant salmon and forests rather than farming for food</span>. <span class="p">Rich natural resources allowed permanent villages without agriculture.</span>`},
+{mod:1, term:"Great Plains Indians", date:"pre-1492", theme:"Geography and Environment", html:`<span class="b">Plains peoples</span> were mostly <span class="r">mobile hunters who depended on bison for food, tools, and shelter</span>. <span class="p">Their lifestyle later transformed after horses arrived with Europeans.</span>`},
+{mod:1, term:"Mississippian Cultures", date:"c. 800–1500", theme:"Culture and Society", html:`<span class="b">Mississippian societies</span> built <span class="r">large earthen mounds and cities, including Cahokia near modern St. Louis</span>. <span class="p">Cahokia's decline before 1492 shows Native societies changed over time.</span>`},
+
+{mod:2, term:"Caravel and Astrolabe", date:"1400s", theme:"Work, Exchange, and Technology", html:`<span class="b">The caravel and astrolabe</span> were <span class="r">a fast ship and a navigation tool that let sailors travel farther and more accurately</span>. <span class="p">These tools made long ocean voyages of exploration possible.</span>`},
+{mod:2, term:"Motivations for Exploration", date:"1400s–1500s", theme:"America in the World", html:`<span class="b">Europeans explored</span> for <span class="r">God, gold, and glory — seeking converts, wealth, and status</span>. <span class="p">These drives pushed nations to fund risky ocean voyages.</span>`},
+{mod:2, term:"Portuguese Exploration", date:"1400s", theme:"America in the World", html:`<span class="b">Portugal</span> pioneered <span class="r">ocean exploration, mapping Africa's coast to reach Asian trade routes</span>. <span class="p">Their success pushed rival Spain to seek its own western route.</span>`},
+{mod:2, term:"Christopher Columbus", date:"1492", theme:"America in the World", html:`<span class="b">Christopher Columbus</span> sailed <span class="r">west for Spain and landed in the Caribbean, seeking a route to Asia</span>. <span class="p">His voyages opened sustained contact between Europe and the Americas.</span>`},
+
+{mod:3, term:"Atlantic World", date:"after 1492", theme:"America in the World", html:`<span class="b">The Atlantic World</span> was the <span class="r">new network of trade, people, and ideas linking Europe, Africa, and the Americas</span>. <span class="p">It connected the continents' economies and cultures for the first time.</span>`},
+{mod:3, term:"Conquistadors", date:"1500s", theme:"Politics and Power", html:`<span class="b">Conquistadors</span> were <span class="r">Spanish soldiers who conquered Native empires like the Aztec and Inca</span>. <span class="p">Their conquests brought Spain vast wealth and territory.</span>`},
+{mod:3, term:"European Interactions with West Africa", date:"1400s–1500s", theme:"America in the World", html:`<span class="b">Europeans</span> first traded <span class="r">gold and goods with West African kingdoms before shifting toward slave trading</span>. <span class="p">This trade grew into the larger transatlantic slave trade.</span>`},
+
+{mod:4, term:"Requerimiento", date:"1513", theme:"Politics and Power", html:`<span class="b">The Requerimiento</span> was a <span class="r">Spanish document read to Native peoples demanding submission to Spain and Christianity</span>. <span class="p">Refusal was used to "justify" war and conquest.</span>`},
+{mod:4, term:"Encomienda System", date:"1500s", theme:"Work, Exchange, and Technology", html:`<span class="b">The encomienda system</span> gave <span class="r">settlers control over Native labor in exchange for "protection" and conversion</span>. <span class="p">In practice, it functioned as forced, often brutal labor.</span>`},
+{mod:4, term:"Caste System", date:"1500s–1700s", theme:"Culture and Society", html:`<span class="b">Spain's caste system</span> <span class="r">ranked colonial society by race and ancestry</span>. <span class="p">It placed Spanish-born colonists above mixed-race and Native peoples.</span>`},
+{mod:4, term:"Mission System", date:"1500s–1700s", theme:"Culture and Society", html:`<span class="b">Spanish missions</span> combined <span class="r">religious conversion with forced Native labor and control</span>. <span class="p">They spread Catholicism while disrupting Native cultures.</span>`},
+];
+data1.forEach(d=>d.period=1);
+
+const data2 = [
+{mod:1, term:"French Colonization of the New World", date:"1608", theme:"America in the World", html:`<span class="b">France</span> built a fur-trading empire in <span class="r">New France, centered on Quebec, with few settlers</span>. <span class="p">Close alliances with Native peoples let France control the fur trade without large-scale land seizure.</span>`},
+{mod:1, term:"Missionaries", date:"1600s", theme:"Culture and Society", html:`<span class="b">Catholic missionaries</span>, especially Jesuits, <span class="r">traveled with French and Spanish colonizers to convert Native peoples</span>. <span class="p">Their efforts spread Christianity but also spread disease and disrupted Native life.</span>`},
+{mod:1, term:"Dutch Colonization of the New World", date:"1609–1624", theme:"America in the World", html:`<span class="b">The Dutch</span> founded <span class="r">New Netherland for the fur trade, centered on New Amsterdam</span>. <span class="p">The colony was diverse and profit-driven, valuing trade over religious mission.</span>`},
+{mod:1, term:"Iroquois Confederacy", date:"c. 1450s–1600s", theme:"Politics and Power", html:`<span class="b">The Iroquois Confederacy</span> united <span class="r">five (later six) Native nations under a shared council</span>. <span class="p">Its strength let it dominate trade and diplomacy with European powers.</span>`},
+{mod:1, term:"Pueblo Revolt", date:"1680", theme:"Politics and Power", html:`<span class="b">The Pueblo Revolt</span> was an <span class="r">uprising of Pueblo peoples that drove Spanish settlers out of New Mexico for over a decade</span>. <span class="p">It showed Native peoples could organize to resist colonial rule.</span>`},
+
+{mod:2, term:"Enclosure Movement", date:"1500s–1700s", theme:"Work, Exchange, and Technology", html:`<span class="b">Enclosure</span> was the fencing off of <span class="r">common English farmland for private, profitable sheep grazing</span>. <span class="p">It pushed many poor farmers off the land, fueling emigration to the colonies.</span>`},
+{mod:2, term:"Motivations for English Colonization", date:"early 1600s", theme:"America in the World", html:`<span class="b">England colonized</span> for <span class="r">profit, religious freedom, and national competition with Spain</span>. <span class="p">These mixed goals shaped very different colonies across the coast.</span>`},
+{mod:2, term:"Virginia Company", date:"1606", theme:"Work, Exchange, and Technology", html:`<span class="b">The Virginia Company</span> was a <span class="r">joint-stock company that funded and founded Jamestown to make a profit</span>. <span class="p">Its need for profit drove harsh labor demands on early settlers.</span>`},
+{mod:2, term:"Powhatan Confederacy", date:"early 1600s", theme:"America in the World", html:`<span class="b">The Powhatan Confederacy</span> was a <span class="r">alliance of Algonquian tribes in Virginia led by Chief Powhatan</span>. <span class="p">Relations with Jamestown shifted between trade, tension, and open war.</span>`},
+{mod:2, term:'"Starving Time"', date:"1609–1610", theme:"America in the World", html:`The <span class="b">"Starving Time"</span> was a <span class="r">winter in Jamestown when most colonists died of famine and disease</span>. <span class="p">It nearly ended the Virginia colony before it took root.</span>`},
+{mod:2, term:"John Rolfe", date:"1612", theme:"Work, Exchange, and Technology", html:`<span class="b">John Rolfe</span> <span class="r">introduced a sweeter strain of tobacco that became Virginia's profitable cash crop</span>. <span class="p">This success secured Virginia's economic survival and boosted demand for labor.</span>`},
+{mod:2, term:"Headright System", date:"1618", theme:"Migration and Settlement", html:`<span class="b">The headright system</span> <span class="r">granted 50 acres of land to anyone who paid for a colonist's passage to Virginia</span>. <span class="p">It encouraged rapid migration and the growth of indentured servitude.</span>`},
+{mod:2, term:"House of Burgesses", date:"1619", theme:"Politics and Power", html:`<span class="b">The House of Burgesses</span> was <span class="r">the first elected representative assembly in the English colonies</span>. <span class="p">It set a precedent for self-government that colonists later defended fiercely.</span>`},
+{mod:2, term:"Act of Religious Toleration", date:"1649", theme:"Politics and Power", html:`<span class="b">Maryland's Act of Religious Toleration</span> <span class="r">protected religious freedom for all Christians, including Catholics</span>. <span class="p">It aimed to protect Catholic settlers from the Protestant majority.</span>`},
+{mod:2, term:"English Civil War", date:"1642–1651", theme:"Politics and Power", html:`<span class="b">The English Civil War</span> was a <span class="r">conflict between the king and Parliament that ended with the king's execution</span>. <span class="p">The turmoil let colonies govern themselves with little English oversight.</span>`},
+{mod:2, term:"Cash Crops", date:"1600s–1700s", theme:"Work, Exchange, and Technology", html:`<span class="b">Cash crops</span> like <span class="r">tobacco, rice, and indigo were grown for export and profit, not local use</span>. <span class="p">Their labor demands drove the growth of slavery in the South.</span>`},
+{mod:2, term:"Bacon's Rebellion", date:"1676", theme:"Politics and Power", html:`<span class="b">Bacon's Rebellion</span> was an <span class="r">uprising of poor Virginia farmers against the governor over land and Native policy</span>. <span class="p">Fear of poor whites and servants uniting pushed planters toward permanent African slavery.</span>`},
+
+{mod:3, term:"Pilgrims", date:"1620", theme:"Migration and Settlement", html:`<span class="b">The Pilgrims</span> were <span class="r">Separatists who sailed on the Mayflower to found Plymouth Colony</span>. <span class="p">They sought a community fully free from the Church of England.</span>`},
+{mod:3, term:"Puritans", date:"1630", theme:"Migration and Settlement", html:`<span class="b">The Puritans</span> founded <span class="r">Massachusetts Bay to build a reformed, "purified" Protestant community</span>. <span class="p">Their strict religious vision shaped New England's laws and culture.</span>`},
+{mod:3, term:"Calvinism", date:"1500s", theme:"Culture and Society", html:`<span class="b">Calvinism</span> was a <span class="r">Protestant belief system centered on predestination and human sinfulness</span>. <span class="p">It shaped the strict, work-focused culture of Puritan New England.</span>`},
+{mod:3, term:"Mayflower Compact", date:"1620", theme:"Politics and Power", html:`<span class="b">The Mayflower Compact</span> was an <span class="r">agreement among Pilgrims to govern themselves by majority rule</span>. <span class="p">It became an early model of self-government and consent in the colonies.</span>`},
+{mod:3, term:"Puritan (Great) Migration", date:"1630s", theme:"Migration and Settlement", html:`<span class="b">The Great Migration</span> brought <span class="r">roughly 20,000 Puritans to New England within a decade</span>. <span class="p">This wave of families quickly built a stable, growing colonial society.</span>`},
+{mod:3, term:"Anglicization", date:"late 1600s–1700s", theme:"Culture and Society", html:`<span class="b">Anglicization</span> was the trend of <span class="r">colonists adopting English fashions, goods, and customs</span>. <span class="p">It tied the colonies more closely to British identity before the Revolution.</span>`},
+{mod:3, term:"Dissenters", date:"1630s–40s", theme:"Culture and Society", html:`<span class="b">Dissenters</span> like <span class="r">Roger Williams and Anne Hutchinson challenged Puritan religious authority</span>. <span class="p">Their exile led to the founding of Rhode Island as a haven for religious freedom.</span>`},
+{mod:3, term:"Dominion of New England", date:"1686–1689", theme:"Politics and Power", html:`<span class="b">The Dominion of New England</span> was <span class="r">England's forced merger of colonies under one royal governor, Edmund Andros</span>. <span class="p">It stripped colonial self-rule and angered New Englanders.</span>`},
+{mod:3, term:"Glorious Revolution", date:"1688", theme:"Politics and Power", html:`<span class="b">The Glorious Revolution</span> replaced <span class="r">King James II with William and Mary in a bloodless English coup</span>. <span class="p">News of it let colonists overthrow the hated Dominion of New England.</span>`},
+{mod:3, term:"Salem Witch Trials", date:"1692", theme:"Culture and Society", html:`<span class="b">The Salem Witch Trials</span> were <span class="r">a wave of accusations and executions for witchcraft in Massachusetts</span>. <span class="p">They reveal deep anxieties in Puritan society over change and instability.</span>`},
+{mod:3, term:"Household Mode of Production", date:"1600s–1700s", theme:"Work, Exchange, and Technology", html:`<span class="b">The household mode of production</span> meant <span class="r">families made most goods themselves for their own use, not for sale</span>. <span class="p">It reflected the largely self-sufficient economy of early New England.</span>`},
+
+{mod:4, term:"Sugar Colonies", date:"1600s", theme:"Work, Exchange, and Technology", html:`<span class="b">Caribbean sugar colonies</span> relied on <span class="r">massive enslaved labor forces to grow highly profitable sugar</span>. <span class="p">Their brutal, deadly labor system became a model later copied on the mainland.</span>`},
+
+{mod:5, term:"Leisler's Rebellion", date:"1689–1691", theme:"Politics and Power", html:`<span class="b">Leisler's Rebellion</span> was an <span class="r">uprising in New York where Jacob Leisler seized power after the Dominion fell</span>. <span class="p">It exposed sharp class and ethnic tensions within New York's colonial society.</span>`},
+{mod:5, term:"Pennsylvania", date:"1681", theme:"Migration and Settlement", html:`<span class="b">Pennsylvania</span> was founded by <span class="r">William Penn as a colony of religious tolerance and fair dealing with Native peoples</span>. <span class="p">Its openness attracted a diverse mix of European settlers.</span>`},
+{mod:5, term:"Quakers", date:"1650s–1680s", theme:"Culture and Society", html:`<span class="b">Quakers</span> believed in <span class="r">an "inner light" in every person and practiced pacifism and equality</span>. <span class="p">Their beliefs shaped Pennsylvania's unusually tolerant colonial society.</span>`},
+
+{mod:6, term:"Mercantilism", date:"1600s–1700s", theme:"Work, Exchange, and Technology", html:`<span class="b">Mercantilism</span> held that <span class="r">colonies existed to enrich the mother country through controlled trade</span>. <span class="p">This belief justified British laws restricting colonial commerce.</span>`},
+{mod:6, term:"Navigation Acts", date:"1651–1673", theme:"Work, Exchange, and Technology", html:`<span class="b">The Navigation Acts</span> <span class="r">required colonial trade to move on English ships and through English ports</span>. <span class="p">They enforced mercantilism but were often ignored through smuggling.</span>`},
+{mod:6, term:"Consumer Revolution", date:"early–mid 1700s", theme:"Work, Exchange, and Technology", html:`<span class="b">The Consumer Revolution</span> was a <span class="r">surge in colonial buying of British manufactured goods</span>. <span class="p">It tied colonists economically and culturally closer to Britain.</span>`},
+{mod:6, term:'"Warning Out"', date:"1700s", theme:"Culture and Society", html:`<span class="b">"Warning out"</span> was a practice of <span class="r">towns legally expelling poor newcomers to avoid supporting them</span>. <span class="p">It shows growing concern over poverty and social order in colonial towns.</span>`},
+
+{mod:7, term:"Middle Passage", date:"1600s–1800s", theme:"Migration and Settlement", html:`<span class="b">The Middle Passage</span> was the <span class="r">brutal Atlantic voyage that forcibly transported enslaved Africans to the Americas</span>. <span class="p">Its horrific conditions killed a large share of captives before arrival.</span>`},
+{mod:7, term:"Chattel Slavery", date:"1600s onward", theme:"Work, Exchange, and Technology", html:`<span class="b">Chattel slavery</span> treated <span class="r">enslaved people as permanent, inheritable property</span>. <span class="p">This system became the foundation of the colonial and later American economy.</span>`},
+{mod:7, term:"Slave Laws", date:"1660s–1705", theme:"Politics and Power", html:`<span class="b">Slave laws</span> legally <span class="r">defined slavery as lifelong and hereditary, based on race</span>. <span class="p">These codes hardened racial slavery into a fixed, permanent system.</span>`},
+{mod:7, term:"Stono Rebellion", date:"1739", theme:"Politics and Power", html:`<span class="b">The Stono Rebellion</span> was <span class="r">South Carolina's largest slave uprising, led by enslaved Africans marching toward Florida</span>. <span class="p">It led colonies to pass even harsher slave codes out of fear.</span>`},
+];
+data2.forEach(d=>d.period=2);
+
+const period3Label = "Period 3: 1754–1800";
+const data3 = [
+{mod:1, term:"Global Wars (King William's, Queen Anne's, etc.)", date:"1689–1748", theme:"America in the World", html:`<span class="b">The colonial wars</span> were <span class="r">a series of conflicts between Britain and France, fought partly in North America</span>. <span class="p">They deepened colonial military ties to Britain and colonial debt toward France.</span>`},
+{mod:1, term:"Albany Plan of Union", date:"1754", theme:"Politics and Power", html:`<span class="b">The Albany Plan</span>, proposed by <span class="r">Benjamin Franklin, called for a unified colonial government to coordinate defense</span>. <span class="p">Colonial assemblies rejected it, but it became an early model for later unity.</span>`},
+{mod:1, term:"Proclamation Line of 1763", date:"1763", theme:"Politics and Power", html:`<span class="b">The Proclamation Line</span> <span class="r">banned colonial settlement west of the Appalachian Mountains</span>. <span class="p">Colonists resented the limit, straining relations with Britain.</span>`},
+{mod:1, term:"Pontiac's War", date:"1763", theme:"America in the World", html:`<span class="b">Pontiac's War</span> was a <span class="r">Native uprising against British forts and settlers in the Great Lakes region</span>. <span class="p">It pushed Britain to issue the Proclamation Line to calm tensions.</span>`},
+{mod:1, term:"Resolution of the French & Indian War", date:"1763", theme:"America in the World", html:`<span class="b">The Treaty of Paris of 1763</span> <span class="r">ended the French and Indian War, giving Britain nearly all French land east of the Mississippi</span>. <span class="p">Britain's huge war debt led it to tax the colonies directly for the first time.</span>`},
+
+{mod:2, term:"Salutary Neglect", date:"early–mid 1700s", theme:"Politics and Power", html:`<span class="b">Salutary neglect</span> was <span class="r">Britain's loose, hands-off enforcement of trade laws in the colonies</span>. <span class="p">It let colonists grow used to self-government, making later British control feel like a violation.</span>`},
+{mod:2, term:"Glorious Revolution", date:"1688", theme:"Politics and Power", html:`<span class="b">The Glorious Revolution</span> replaced <span class="r">King James II with William and Mary and affirmed Parliament's power over the king</span>. <span class="p">It gave colonists a language of rights they later used against Britain.</span>`},
+{mod:2, term:"Quartering Act", date:"1765", theme:"Politics and Power", html:`<span class="b">The Quartering Act</span> <span class="r">required colonies to house and supply British troops</span>. <span class="p">Colonists saw it as an unfair burden imposed without their consent.</span>`},
+{mod:2, term:"Sugar Act", date:"1764", theme:"Work, Exchange, and Technology", html:`<span class="b">The Sugar Act</span> <span class="r">placed new taxes on sugar and molasses to raise revenue, not just regulate trade</span>. <span class="p">It marked Britain's shift toward directly taxing the colonies.</span>`},
+{mod:2, term:"Committees of Correspondence", date:"1772", theme:"Politics and Power", html:`<span class="b">Committees of Correspondence</span> were <span class="r">networks colonies used to share news and coordinate resistance to Britain</span>. <span class="p">They built unity among colonies that had rarely cooperated before.</span>`},
+{mod:2, term:"Stamp Act (and Congress)", date:"1765", theme:"Politics and Power", html:`<span class="b">The Stamp Act</span> <span class="r">taxed printed materials and sparked the Stamp Act Congress, where colonies protested together</span>. <span class="p">It united colonists around "no taxation without representation."</span>`},
+{mod:2, term:"Sons of Liberty / Daughters of Liberty", date:"1765", theme:"Politics and Power", html:`<span class="b">The Sons and Daughters of Liberty</span> were <span class="r">colonial groups that organized boycotts and protests against British taxes</span>. <span class="p">Their activism turned scattered anger into organized resistance.</span>`},
+{mod:2, term:"Virginia Resolves", date:"1765", theme:"Politics and Power", html:`<span class="b">The Virginia Resolves</span>, pushed by <span class="r">Patrick Henry, declared Virginia's assembly alone had the right to tax Virginians</span>. <span class="p">They spread the idea that only colonial assemblies could tax colonists.</span>`},
+{mod:2, term:"Declaratory Act", date:"1766", theme:"Politics and Power", html:`<span class="b">The Declaratory Act</span> <span class="r">declared Parliament's full authority to legislate for the colonies "in all cases whatsoever"</span>. <span class="p">It followed the Stamp Act's repeal, showing Britain would not give up control.</span>`},
+{mod:2, term:"Townshend Acts", date:"1767", theme:"Work, Exchange, and Technology", html:`<span class="b">The Townshend Acts</span> <span class="r">taxed imported goods like glass, tea, and paper</span>. <span class="p">Colonial boycotts against them showed growing coordinated resistance.</span>`},
+{mod:2, term:"Tea Act", date:"1773", theme:"Work, Exchange, and Technology", html:`<span class="b">The Tea Act</span> <span class="r">gave the British East India Company a monopoly on colonial tea sales</span>. <span class="p">It triggered the Boston Tea Party and renewed anger over taxation.</span>`},
+{mod:2, term:"Coercive Acts / Intolerable Acts", date:"1774", theme:"Politics and Power", html:`<span class="b">The Coercive Acts</span> <span class="r">punished Massachusetts by closing Boston's port and stripping self-government</span>. <span class="p">Colonists called them "Intolerable" and united in support of Massachusetts.</span>`},
+
+{mod:3, term:"Continental Congress(es)", date:"1774–1776", theme:"Politics and Power", html:`<span class="b">The Continental Congresses</span> were <span class="r">meetings of colonial delegates who coordinated resistance and eventually declared independence</span>. <span class="p">They became the first shared government for all thirteen colonies.</span>`},
+{mod:3, term:"Lord Dunmore's Proclamation", date:"1775", theme:"Politics and Power", html:`<span class="b">Lord Dunmore's Proclamation</span> <span class="r">offered freedom to enslaved people who fled their patriot owners to fight for the British</span>. <span class="p">It pushed many enslaved Virginians toward the British and angered patriot slaveholders.</span>`},
+{mod:3, term:"Native Tribes in the Revolutionary War", date:"1775–1783", theme:"America in the World", html:`<span class="b">Native nations</span> <span class="r">split their support between Britain and the patriots, often to protect their own land</span>. <span class="p">Most tribes sided with Britain, hoping it would limit colonial expansion west.</span>`},
+
+{mod:4, term:"Battle of Saratoga", date:"October 1777", theme:"America in the World", html:`<span class="b">Saratoga</span>, a <span class="r">key American victory in the Revolutionary War that stopped a British invasion from Canada</span>, was significant because <span class="p">it convinced the French that the Americans could win and led to the French Alliance of 1778.</span>`},
+{mod:4, term:"Valley Forge", date:"1777–1778", theme:"America in the World", html:`<span class="b">Valley Forge</span> was the <span class="r">harsh winter camp where Washington's army trained and survived severe shortages</span>. <span class="p">The army emerged more disciplined and unified, ready for renewed fighting.</span>`},
+{mod:4, term:"Treaty of Paris (1783)", date:"1783", theme:"America in the World", html:`<span class="b">The Treaty of Paris</span> <span class="r">formally ended the Revolutionary War and recognized American independence</span>. <span class="p">It also granted the new United States land to the Mississippi River.</span>`},
+
+{mod:5, term:"VA Statute for Religious Freedom", date:"1786", theme:"Politics and Power", html:`<span class="b">The Virginia Statute for Religious Freedom</span>, written by <span class="r">Thomas Jefferson, separated church from state and ended religious tests</span>. <span class="p">It became a model for religious liberty in the First Amendment.</span>`},
+{mod:5, term:"Articles of Confederation", date:"1781", theme:"Politics and Power", html:`<span class="b">The Articles of Confederation</span> created a <span class="r">weak national government with no power to tax or regulate trade</span>. <span class="p">Its weaknesses led directly to calls for a stronger constitution.</span>`},
+{mod:5, term:"Newburgh Conspiracy", date:"1783", theme:"Politics and Power", html:`<span class="b">The Newburgh Conspiracy</span> was a <span class="r">threat by unpaid army officers to challenge civilian authority over Congress</span>. <span class="p">Washington's personal appeal defused it, preserving civilian control of the military.</span>`},
+{mod:5, term:"Western Lands Controversy", date:"1780s", theme:"Geography and Environment", html:`<span class="b">The Western Lands Controversy</span> was a <span class="r">dispute among states over claims to land west of the Appalachians</span>. <span class="p">States ceding their claims to Congress helped the Articles finally be ratified.</span>`},
+{mod:5, term:"Treaty of Fort Stanwix", date:"1784", theme:"America in the World", html:`<span class="b">The Treaty of Fort Stanwix</span> <span class="r">forced the Iroquois to cede large amounts of land to the United States</span>. <span class="p">It showed the new nation would expand onto Native land after the Revolution.</span>`},
+{mod:5, term:"Northwest Ordinance", date:"1787", theme:"Politics and Power", html:`<span class="b">The Northwest Ordinance</span> <span class="r">set up a process for territories to become states and banned slavery north of the Ohio River</span>. <span class="p">It became a key model for how the U.S. would expand westward.</span>`},
+
+{mod:6, term:"Constitutional Convention", date:"1787", theme:"Politics and Power", html:`<span class="b">The Constitutional Convention</span> met to <span class="r">replace the weak Articles of Confederation with a new framework of government</span>. <span class="p">Compromises there shaped the structure of Congress and the presidency.</span>`},
+{mod:6, term:"Ratification Process", date:"1787–1790", theme:"Politics and Power", html:`<span class="b">Ratification</span> required <span class="r">nine of thirteen states to approve the new Constitution through state conventions</span>. <span class="p">Fierce public debate over ratification shaped early American political parties.</span>`},
+{mod:6, term:"Federalist and Antifederalist Papers", date:"1787–1788", theme:"Politics and Power", html:`<span class="b">The Federalist and Antifederalist Papers</span> were <span class="r">essays arguing for and against ratifying the Constitution</span>. <span class="p">Their debate over federal power shaped the case for adding a Bill of Rights.</span>`},
+
+{mod:7, term:"Republican Motherhood", date:"1780s–1790s", theme:"Culture and Society", html:`<span class="b">Republican Motherhood</span> held that <span class="r">women should raise virtuous, informed citizens for the new republic</span>. <span class="p">It justified more education for women while keeping them out of formal politics.</span>`},
+{mod:7, term:"Noah Webster", date:"1783", theme:"Culture and Society", html:`<span class="b">Noah Webster</span> wrote <span class="r">an American spelling book and later a dictionary to standardize American English</span>. <span class="p">His work promoted a distinct American cultural identity apart from Britain.</span>`},
+
+{mod:8, term:"Hamilton's Financial Plan", date:"1790–1791", theme:"Work, Exchange, and Technology", html:`<span class="b">Hamilton's Financial Plan</span> called for the <span class="r">federal government to assume state debts and create a national bank</span>. <span class="p">It strengthened the federal government but sparked fierce opposition over its constitutionality.</span>`},
+
+{mod:9, term:"French Revolution", date:"1789–1799", theme:"America in the World", html:`<span class="b">The French Revolution</span> was a <span class="r">radical uprising that overthrew the French monarchy and later turned violent</span>. <span class="p">It split American politics between those who supported and feared its radicalism.</span>`},
+{mod:9, term:"Neutrality Proclamation", date:"1793", theme:"America in the World", html:`<span class="b">The Neutrality Proclamation</span>, issued by <span class="r">Washington, declared the U.S. would not take sides between Britain and France</span>. <span class="p">It set an early precedent for American neutrality in European wars.</span>`},
+{mod:9, term:"Whiskey Rebellion", date:"1794", theme:"Politics and Power", html:`<span class="b">The Whiskey Rebellion</span> was a <span class="r">revolt by farmers against a federal tax on whiskey</span>. <span class="p">Washington's forceful response showed the new federal government could enforce its laws.</span>`},
+{mod:9, term:"Battle of Fallen Timbers", date:"1794", theme:"America in the World", html:`<span class="b">The Battle of Fallen Timbers</span> was a <span class="r">decisive U.S. victory over a Native confederacy in the Northwest Territory</span>. <span class="p">It opened much of the Ohio Valley to further American settlement.</span>`},
+{mod:9, term:"XYZ Affair", date:"1797–1798", theme:"America in the World", html:`<span class="b">The XYZ Affair</span> was a <span class="r">diplomatic scandal in which French agents demanded bribes from American diplomats</span>. <span class="p">It sparked outrage in America and led to an undeclared naval war with France.</span>`},
+{mod:9, term:"Election of 1800", date:"1800", theme:"Politics and Power", html:`<span class="b">The Election of 1800</span> saw <span class="r">Thomas Jefferson defeat John Adams in a bitter, close contest</span>. <span class="p">It marked the first peaceful transfer of power between opposing parties.</span>`},
+{mod:9, term:"VA and Kentucky Resolutions", date:"1798", theme:"Politics and Power", html:`<span class="b">The Virginia and Kentucky Resolutions</span> argued that <span class="r">states could judge the constitutionality of federal laws, like the Alien and Sedition Acts</span>. <span class="p">They introduced an early states' rights argument later used to challenge federal power.</span>`},
+];
+data3.forEach(d=>d.period=3);
+
+const allData = [...data1, ...data2, ...data3];
+const periodLabels = {1: period1Label, 2: period2Label, 3: period3Label};
+
+function parseYear(dateStr){
+  const m = dateStr.match(/\d{3,4}/);
+  return m ? parseInt(m[0], 10) : null;
+}
+allData.forEach(d=>{ d.year = parseYear(d.date); });
+
+const root = document.getElementById('root');
+const searchEl = document.getElementById('search');
+const periodEl = document.getElementById('periodFilter');
+const moduleFromEl = document.getElementById('moduleFromFilter');
+const moduleToEl = document.getElementById('moduleToFilter');
+const yearFromEl = document.getElementById('yearFromFilter');
+const yearToEl = document.getElementById('yearToFilter');
+const countEl = document.getElementById('count');
+const clearBtn = document.getElementById('clearBtn');
+
+// populate period filter
+[...new Set(allData.map(d=>d.period))].sort().forEach(p=>{
+  const opt = document.createElement('option');
+  opt.value = p; opt.textContent = periodLabels[p] || ('Period ' + p);
+  periodEl.appendChild(opt);
+});
+function refreshModuleOptions(){
+  const pVal = periodEl.value;
+  const mods = [...new Set(allData.filter(d=> !pVal || String(d.period)===pVal).map(d=>d.mod))].sort((a,b)=>a-b);
+  [moduleFromEl, moduleToEl].forEach(sel=>{
+    const prev = sel.value;
+    sel.innerHTML = '<option value="">Any</option>';
+    mods.forEach(m=>{
+      const opt = document.createElement('option');
+      opt.value = m; opt.textContent = 'Mod ' + m;
+      sel.appendChild(opt);
+    });
+    if(mods.some(m=>String(m)===prev)) sel.value = prev;
+  });
+}
+refreshModuleOptions();
+
+function matches(c, q, pVal, modFrom, modTo, yearFrom, yearTo){
+  if(pVal && String(c.period)!==pVal) return false;
+  if(modFrom && c.mod < Number(modFrom)) return false;
+  if(modTo && c.mod > Number(modTo)) return false;
+  if(yearFrom && (c.year===null || c.year < Number(yearFrom))) return false;
+  if(yearTo && (c.year===null || c.year > Number(yearTo))) return false;
+  if(!q) return true;
+  const hay = (c.term + ' ' + c.date + ' ' + c.theme + ' ' + c.html.replace(/<[^>]+>/g,'')).toLowerCase();
+  return hay.includes(q);
+}
+
+function getFilterValues(){
+  return {
+    q: searchEl.value.trim().toLowerCase(),
+    pVal: periodEl.value,
+    modFrom: moduleFromEl.value,
+    modTo: moduleToEl.value,
+    yearFrom: yearFromEl.value,
+    yearTo: yearToEl.value,
+  };
+}
+
+function render(){
+  const {q, pVal, modFrom, modTo, yearFrom, yearTo} = getFilterValues();
+  const filtered = allData.filter(c=>matches(c,q,pVal,modFrom,modTo,yearFrom,yearTo));
+
+  root.innerHTML = '';
+  countEl.textContent = filtered.length + (filtered.length===1 ? ' card' : ' cards');
+
+  if(filtered.length===0){
+    const none = document.createElement('div');
+    none.className = 'no-results';
+    none.textContent = 'No cards match your search.';
+    root.appendChild(none);
+    return;
+  }
+
+  let currentPeriod = null, currentMod = null, grid = null;
+  filtered.forEach(c=>{
+    if(c.period !== currentPeriod){
+      currentPeriod = c.period; currentMod = null;
+      const pt = document.createElement('div');
+      pt.className = 'period-title';
+      pt.id = 'period-' + c.period;
+      pt.textContent = periodLabels[c.period] || ('Period ' + c.period);
+      root.appendChild(pt);
+    }
+    if(c.mod !== currentMod){
+      currentMod = c.mod;
+      const h = document.createElement('div');
+      h.className = 'module-title';
+      h.textContent = 'Module ' + c.mod;
+      root.appendChild(h);
+      grid = document.createElement('div');
+      grid.className = 'grid';
+      root.appendChild(grid);
+    }
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    card.innerHTML = `
+      <div class="flip-inner">
+        <div class="face front">
+          <div class="body">
+            <div class="term">${c.term}</div>
+            <div class="period">Period ${c.period} (Mod ${c.mod})</div>
+          </div>
+        </div>
+        <div class="face back">
+          <div class="body">
+            <div class="meta"><b>Date:</b> ${c.date} &nbsp;|&nbsp; <b>Theme:</b> ${c.theme}</div>
+            <div>${c.html}</div>
+          </div>
+        </div>
+      </div>`;
+    card.addEventListener('click', ()=> card.classList.toggle('flipped'));
+    grid.appendChild(card);
+  });
+}
+
+// ---- Study mode ----
+const studyOverlay = document.getElementById('studyOverlay');
+const studyBtn = document.getElementById('studyBtn');
+const studyClose = document.getElementById('studyClose');
+const studyPrev = document.getElementById('studyPrev');
+const studyNext = document.getElementById('studyNext');
+const studyCard = document.getElementById('studyCard');
+const studyCounter = document.getElementById('studyCounter');
+const studyTerm = document.getElementById('studyTerm');
+const studyPeriod = document.getElementById('studyPeriod');
+const studyMeta = document.getElementById('studyMeta');
+const studyText = document.getElementById('studyText');
+
+let studyDeck = [];
+let studyIndex = 0;
+
+function getCurrentFiltered(){
+  const {q, pVal, modFrom, modTo, yearFrom, yearTo} = getFilterValues();
+  return allData.filter(c=>matches(c,q,pVal,modFrom,modTo,yearFrom,yearTo));
+}
+
+function renderStudyCard(){
+  studyCard.classList.remove('flipped');
+  const c = studyDeck[studyIndex];
+  if(!c) return;
+  studyTerm.textContent = c.term;
+  studyPeriod.textContent = `Period ${c.period} (Mod ${c.mod})`;
+  studyMeta.innerHTML = `<b>Date:</b> ${c.date} &nbsp;|&nbsp; <b>Theme:</b> ${c.theme}`;
+  studyText.innerHTML = c.html;
+  studyCounter.textContent = `${studyIndex+1} / ${studyDeck.length}`;
+}
+
+function openStudy(){
+  studyDeck = getCurrentFiltered();
+  if(studyDeck.length===0) return;
+  studyIndex = 0;
+  renderStudyCard();
+  studyOverlay.classList.add('open');
+}
+function closeStudy(){ studyOverlay.classList.remove('open'); }
+
+studyBtn.addEventListener('click', openStudy);
+document.getElementById('navStudy').addEventListener('click', (e)=>{ e.preventDefault(); openStudy(); });
+studyClose.addEventListener('click', closeStudy);
+studyCard.addEventListener('click', ()=> studyCard.classList.toggle('flipped'));
+studyPrev.addEventListener('click', ()=>{
+  if(studyDeck.length===0) return;
+  studyIndex = (studyIndex - 1 + studyDeck.length) % studyDeck.length;
+  renderStudyCard();
+});
+studyNext.addEventListener('click', ()=>{
+  if(studyDeck.length===0) return;
+  studyIndex = (studyIndex + 1) % studyDeck.length;
+  renderStudyCard();
+});
+document.addEventListener('keydown', (e)=>{
+  if(!studyOverlay.classList.contains('open')) return;
+  if(e.key==='ArrowRight') studyNext.click();
+  else if(e.key==='ArrowLeft') studyPrev.click();
+  else if(e.key==='Escape') closeStudy();
+  else if(e.key===' '){ e.preventDefault(); studyCard.classList.toggle('flipped'); }
+});
+
+searchEl.addEventListener('input', render);
+periodEl.addEventListener('change', ()=>{ refreshModuleOptions(); render(); });
+moduleFromEl.addEventListener('change', render);
+moduleToEl.addEventListener('change', render);
+yearFromEl.addEventListener('input', render);
+yearToEl.addEventListener('input', render);
+clearBtn.addEventListener('click', ()=>{
+  searchEl.value=''; periodEl.value=''; refreshModuleOptions();
+  moduleFromEl.value=''; moduleToEl.value=''; yearFromEl.value=''; yearToEl.value='';
+  render();
+});
+
+render();
+</script>
+</body>
+</html>

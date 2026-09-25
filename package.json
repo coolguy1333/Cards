@@ -1,0 +1,20 @@
+{
+  "name": "classcards",
+  "version": "2.0.0",
+  "description": "Flashcards for any class: Google sign-in, custom card layouts, and a local SQLite database.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "DEV_LOGIN=1 node server.js"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "cookie-session": "^2.1.0",
+    "express": "^4.21.2",
+    "google-auth-library": "^9.15.1"
+  }
+}

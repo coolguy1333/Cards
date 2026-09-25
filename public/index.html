@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ClassCards</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%223%22 y=%227%22 width=%2226%22 height=%2218%22 rx=%223%22 fill=%22%23fff%22 stroke=%22%232962ff%22 stroke-width=%222%22/%3E%3Cpath d=%22M3 11h26%22 stroke=%22%23ef5350%22 stroke-width=%222%22/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">Class<span>Cards</span></div>
+  <div class="account" id="account"></div>
+</header>
+
+<nav class="class-bar" id="classBar" aria-label="Classes"></nav>
+
+<main>
+<div class="hero">
+  <h1 id="className">ClassCards</h1>
+  <div class="sub" id="classSub">Tap a card to flip.</div>
+</div>
+<div class="signin-banner" id="signinBanner" hidden></div>
+<div class="controls">
+  <input id="search" type="text" placeholder="Search cards...">
+  <select id="sourceFilter">
+    <option value="">All cards</option>
+    <option value="builtin">Built-in cards</option>
+    <option value="mine">My cards</option>
+  </select>
+  <button class="btn primary" id="newBtn" hidden>+ New card</button>
+</div>
+<div class="controls range-controls" id="rangeControls">
+  <span id="groupFilters" class="group-filters"></span>
+  <label class="range-label" id="yearFilter" hidden>Year
+    <input id="yearFromFilter" type="number" placeholder="from" inputmode="numeric">
+    <span class="range-to">to</span>
+    <input id="yearToFilter" type="number" placeholder="to" inputmode="numeric">
+  </label>
+  <button id="clearBtn">Clear</button>
+  <button id="studyBtn" class="primary">Study Mode</button>
+</div>
+<div class="count" id="count"></div>
+<div id="root"></div>
+<div class="hint">Tap any card to flip it back.</div>
+</main>
+<footer class="site-footer">ClassCards<span id="footerLinks" hidden> &mdash; <a href="#" id="layoutsLink">Manage layouts</a> &middot; <a href="/api/export">Export my cards</a></span></footer>
+
+<!-- Study mode -->
+<div id="studyOverlay">
+  <div class="study-topbar">
+    <button id="studyClose" aria-label="Close">&times;</button>
+    <div class="study-counter" id="studyCounter"></div>
+    <button id="studyShuffle" class="study-shuffle" title="Shuffle">Shuffle</button>
+  </div>
+  <div class="study-stage">
+    <div class="study-card flip-card" id="studyCard"></div>
+  </div>
+  <div class="study-navbar">
+    <button class="secondary" id="studyPrev">&larr; Prev</button>
+    <button id="studyNext">Next &rarr;</button>
+  </div>
+</div>
+
+<!-- Card editor -->
+<dialog id="cardDialog" class="modal">
+  <form id="cardForm" novalidate>
+    <h2 id="cardTitle">New card</h2>
+    <div id="cardFields" class="field-grid"></div>
+    <span class="markup-help">Colors in long text: <code>**key term**</code> <span class="b">blue</span> &middot;
+      <code>!!core fact!!</code> <span class="r">red</span> &middot; <code>__significance__</code> <span class="p">purple</span></span>
+    <div class="preview-label">Preview <small>(click to flip)</small></div>
+    <div class="preview-card flip-card" id="cardPreview"></div>
+    <div class="form-error" id="cardError"></div>
+    <div class="editor-actions">
+      <button type="button" class="btn danger" id="cardDelete" hidden>Delete</button>
+      <span class="spacer"></span>
+      <button type="button" class="btn" data-close>Cancel</button>
+      <button type="submit" class="btn primary" id="cardSave">Save card</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Class editor -->
+<dialog id="classDialog" class="modal">
+  <form id="classForm" novalidate>
+    <h2 id="classTitle">New class</h2>
+    <label class="field">Class name
+      <input name="name" type="text" maxlength="60" required placeholder="e.g. AP Biology">
+    </label>
+    <div class="field">Color
+      <div class="swatches" id="swatches"></div>
+    </div>
+    <label class="field">Card layout
+      <select name="layoutId" id="classLayout"></select>
+      <span class="markup-help" id="layoutSummary"></span>
+    </label>
+    <div class="link-row"><a href="#" id="classNewLayout">+ Make a new layout</a></div>
+    <div class="form-error" id="classError"></div>
+    <div class="editor-actions">
+      <button type="button" class="btn danger" id="classDelete" hidden>Delete class</button>
+      <span class="spacer"></span>
+      <button type="button" class="btn" data-close>Cancel</button>
+      <button type="submit" class="btn primary">Save class</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Layout list -->
+<dialog id="layoutsDialog" class="modal">
+  <div class="modal-body">
+    <h2>Card layouts</h2>
+    <p class="markup-help">A layout sets which fields a card has and where each one shows up. Built-in layouts can be duplicated and changed.</p>
+    <div id="layoutList" class="layout-list"></div>
+    <div class="editor-actions">
+      <button type="button" class="btn" data-close>Close</button>
+      <button type="button" class="btn primary" id="layoutNew">+ New layout</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Layout builder -->
+<dialog id="layoutDialog" class="modal wide">
+  <form id="layoutForm" novalidate>
+    <h2 id="layoutTitle">New layout</h2>
+    <label class="field">Layout name
+      <input name="name" type="text" maxlength="60" required placeholder="e.g. Spanish vocab">
+    </label>
+    <div class="field">Fields</div>
+    <div class="lf-head"><span>Name</span><span>Type</span><span>Shows on</span><span title="Group cards into sections by this field and filter by it">Sections</span><span></span></div>
+    <div id="layoutFields"></div>
+    <div><button type="button" class="btn" id="addField">+ Add field</button></div>
+    <div class="preview-label">Preview <small>(click to flip)</small></div>
+    <div class="preview-card flip-card" id="layoutPreview"></div>
+    <div class="form-error" id="layoutError"></div>
+    <div class="editor-actions">
+      <button type="button" class="btn danger" id="layoutDelete" hidden>Delete layout</button>
+      <span class="spacer"></span>
+      <button type="button" class="btn" data-close>Cancel</button>
+      <button type="submit" class="btn primary">Save layout</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

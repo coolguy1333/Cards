@@ -1,0 +1,786 @@
+[
+ {
+  "period": 1,
+  "module": 1,
+  "term": "Mesoamerican Indians",
+  "date": "pre-1492",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Mesoamerican peoples</span> like the <span class=\"r\">Aztec built large cities with complex farming, trade, and religion</span>. <span class=\"p\">Their dense populations and wealth later drew Spanish conquest.</span>"
+ },
+ {
+  "period": 1,
+  "module": 1,
+  "term": "Southwestern Indians",
+  "date": "pre-1492",
+  "theme": "Geography and Environment",
+  "html": "<span class=\"b\">Southwestern peoples</span> like the <span class=\"r\">Pueblo built irrigation systems and adobe villages in a dry environment</span>. <span class=\"p\">Their farming adapted closely to a harsh desert landscape.</span>"
+ },
+ {
+  "period": 1,
+  "module": 1,
+  "term": "Northwest Indians",
+  "date": "pre-1492",
+  "theme": "Geography and Environment",
+  "html": "<span class=\"b\">Northwest peoples</span> relied on <span class=\"r\">abundant salmon and forests rather than farming for food</span>. <span class=\"p\">Rich natural resources allowed permanent villages without agriculture.</span>"
+ },
+ {
+  "period": 1,
+  "module": 1,
+  "term": "Great Plains Indians",
+  "date": "pre-1492",
+  "theme": "Geography and Environment",
+  "html": "<span class=\"b\">Plains peoples</span> were mostly <span class=\"r\">mobile hunters who depended on bison for food, tools, and shelter</span>. <span class=\"p\">Their lifestyle later transformed after horses arrived with Europeans.</span>"
+ },
+ {
+  "period": 1,
+  "module": 1,
+  "term": "Mississippian Cultures",
+  "date": "c. 800–1500",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Mississippian societies</span> built <span class=\"r\">large earthen mounds and cities, including Cahokia near modern St. Louis</span>. <span class=\"p\">Cahokia's decline before 1492 shows Native societies changed over time.</span>"
+ },
+ {
+  "period": 1,
+  "module": 2,
+  "term": "Caravel and Astrolabe",
+  "date": "1400s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The caravel and astrolabe</span> were <span class=\"r\">a fast ship and a navigation tool that let sailors travel farther and more accurately</span>. <span class=\"p\">These tools made long ocean voyages of exploration possible.</span>"
+ },
+ {
+  "period": 1,
+  "module": 2,
+  "term": "Motivations for Exploration",
+  "date": "1400s–1500s",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">Europeans explored</span> for <span class=\"r\">God, gold, and glory — seeking converts, wealth, and status</span>. <span class=\"p\">These drives pushed nations to fund risky ocean voyages.</span>"
+ },
+ {
+  "period": 1,
+  "module": 2,
+  "term": "Portuguese Exploration",
+  "date": "1400s",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">Portugal</span> pioneered <span class=\"r\">ocean exploration, mapping Africa's coast to reach Asian trade routes</span>. <span class=\"p\">Their success pushed rival Spain to seek its own western route.</span>"
+ },
+ {
+  "period": 1,
+  "module": 2,
+  "term": "Christopher Columbus",
+  "date": "1492",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">Christopher Columbus</span> sailed <span class=\"r\">west for Spain and landed in the Caribbean, seeking a route to Asia</span>. <span class=\"p\">His voyages opened sustained contact between Europe and the Americas.</span>"
+ },
+ {
+  "period": 1,
+  "module": 3,
+  "term": "Atlantic World",
+  "date": "after 1492",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Atlantic World</span> was the <span class=\"r\">new network of trade, people, and ideas linking Europe, Africa, and the Americas</span>. <span class=\"p\">It connected the continents' economies and cultures for the first time.</span>"
+ },
+ {
+  "period": 1,
+  "module": 3,
+  "term": "Conquistadors",
+  "date": "1500s",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Conquistadors</span> were <span class=\"r\">Spanish soldiers who conquered Native empires like the Aztec and Inca</span>. <span class=\"p\">Their conquests brought Spain vast wealth and territory.</span>"
+ },
+ {
+  "period": 1,
+  "module": 3,
+  "term": "European Interactions with West Africa",
+  "date": "1400s–1500s",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">Europeans</span> first traded <span class=\"r\">gold and goods with West African kingdoms before shifting toward slave trading</span>. <span class=\"p\">This trade grew into the larger transatlantic slave trade.</span>"
+ },
+ {
+  "period": 1,
+  "module": 4,
+  "term": "Requerimiento",
+  "date": "1513",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Requerimiento</span> was a <span class=\"r\">Spanish document read to Native peoples demanding submission to Spain and Christianity</span>. <span class=\"p\">Refusal was used to \"justify\" war and conquest.</span>"
+ },
+ {
+  "period": 1,
+  "module": 4,
+  "term": "Encomienda System",
+  "date": "1500s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The encomienda system</span> gave <span class=\"r\">settlers control over Native labor in exchange for \"protection\" and conversion</span>. <span class=\"p\">In practice, it functioned as forced, often brutal labor.</span>"
+ },
+ {
+  "period": 1,
+  "module": 4,
+  "term": "Caste System",
+  "date": "1500s–1700s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Spain's caste system</span> <span class=\"r\">ranked colonial society by race and ancestry</span>. <span class=\"p\">It placed Spanish-born colonists above mixed-race and Native peoples.</span>"
+ },
+ {
+  "period": 1,
+  "module": 4,
+  "term": "Mission System",
+  "date": "1500s–1700s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Spanish missions</span> combined <span class=\"r\">religious conversion with forced Native labor and control</span>. <span class=\"p\">They spread Catholicism while disrupting Native cultures.</span>"
+ },
+ {
+  "period": 2,
+  "module": 1,
+  "term": "French Colonization of the New World",
+  "date": "1608",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">France</span> built a fur-trading empire in <span class=\"r\">New France, centered on Quebec, with few settlers</span>. <span class=\"p\">Close alliances with Native peoples let France control the fur trade without large-scale land seizure.</span>"
+ },
+ {
+  "period": 2,
+  "module": 1,
+  "term": "Missionaries",
+  "date": "1600s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Catholic missionaries</span>, especially Jesuits, <span class=\"r\">traveled with French and Spanish colonizers to convert Native peoples</span>. <span class=\"p\">Their efforts spread Christianity but also spread disease and disrupted Native life.</span>"
+ },
+ {
+  "period": 2,
+  "module": 1,
+  "term": "Dutch Colonization of the New World",
+  "date": "1609–1624",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Dutch</span> founded <span class=\"r\">New Netherland for the fur trade, centered on New Amsterdam</span>. <span class=\"p\">The colony was diverse and profit-driven, valuing trade over religious mission.</span>"
+ },
+ {
+  "period": 2,
+  "module": 1,
+  "term": "Iroquois Confederacy",
+  "date": "c. 1450s–1600s",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Iroquois Confederacy</span> united <span class=\"r\">five (later six) Native nations under a shared council</span>. <span class=\"p\">Its strength let it dominate trade and diplomacy with European powers.</span>"
+ },
+ {
+  "period": 2,
+  "module": 1,
+  "term": "Pueblo Revolt",
+  "date": "1680",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Pueblo Revolt</span> was an <span class=\"r\">uprising of Pueblo peoples that drove Spanish settlers out of New Mexico for over a decade</span>. <span class=\"p\">It showed Native peoples could organize to resist colonial rule.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "Enclosure Movement",
+  "date": "1500s–1700s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Enclosure</span> was the fencing off of <span class=\"r\">common English farmland for private, profitable sheep grazing</span>. <span class=\"p\">It pushed many poor farmers off the land, fueling emigration to the colonies.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "Motivations for English Colonization",
+  "date": "early 1600s",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">England colonized</span> for <span class=\"r\">profit, religious freedom, and national competition with Spain</span>. <span class=\"p\">These mixed goals shaped very different colonies across the coast.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "Virginia Company",
+  "date": "1606",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Virginia Company</span> was a <span class=\"r\">joint-stock company that funded and founded Jamestown to make a profit</span>. <span class=\"p\">Its need for profit drove harsh labor demands on early settlers.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "Powhatan Confederacy",
+  "date": "early 1600s",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Powhatan Confederacy</span> was a <span class=\"r\">alliance of Algonquian tribes in Virginia led by Chief Powhatan</span>. <span class=\"p\">Relations with Jamestown shifted between trade, tension, and open war.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "\"Starving Time\"",
+  "date": "1609–1610",
+  "theme": "America in the World",
+  "html": "The <span class=\"b\">\"Starving Time\"</span> was a <span class=\"r\">winter in Jamestown when most colonists died of famine and disease</span>. <span class=\"p\">It nearly ended the Virginia colony before it took root.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "John Rolfe",
+  "date": "1612",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">John Rolfe</span> <span class=\"r\">introduced a sweeter strain of tobacco that became Virginia's profitable cash crop</span>. <span class=\"p\">This success secured Virginia's economic survival and boosted demand for labor.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "Headright System",
+  "date": "1618",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">The headright system</span> <span class=\"r\">granted 50 acres of land to anyone who paid for a colonist's passage to Virginia</span>. <span class=\"p\">It encouraged rapid migration and the growth of indentured servitude.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "House of Burgesses",
+  "date": "1619",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The House of Burgesses</span> was <span class=\"r\">the first elected representative assembly in the English colonies</span>. <span class=\"p\">It set a precedent for self-government that colonists later defended fiercely.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "Act of Religious Toleration",
+  "date": "1649",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Maryland's Act of Religious Toleration</span> <span class=\"r\">protected religious freedom for all Christians, including Catholics</span>. <span class=\"p\">It aimed to protect Catholic settlers from the Protestant majority.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "English Civil War",
+  "date": "1642–1651",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The English Civil War</span> was a <span class=\"r\">conflict between the king and Parliament that ended with the king's execution</span>. <span class=\"p\">The turmoil let colonies govern themselves with little English oversight.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "Cash Crops",
+  "date": "1600s–1700s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Cash crops</span> like <span class=\"r\">tobacco, rice, and indigo were grown for export and profit, not local use</span>. <span class=\"p\">Their labor demands drove the growth of slavery in the South.</span>"
+ },
+ {
+  "period": 2,
+  "module": 2,
+  "term": "Bacon's Rebellion",
+  "date": "1676",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Bacon's Rebellion</span> was an <span class=\"r\">uprising of poor Virginia farmers against the governor over land and Native policy</span>. <span class=\"p\">Fear of poor whites and servants uniting pushed planters toward permanent African slavery.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Pilgrims",
+  "date": "1620",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">The Pilgrims</span> were <span class=\"r\">Separatists who sailed on the Mayflower to found Plymouth Colony</span>. <span class=\"p\">They sought a community fully free from the Church of England.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Puritans",
+  "date": "1630",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">The Puritans</span> founded <span class=\"r\">Massachusetts Bay to build a reformed, \"purified\" Protestant community</span>. <span class=\"p\">Their strict religious vision shaped New England's laws and culture.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Calvinism",
+  "date": "1500s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Calvinism</span> was a <span class=\"r\">Protestant belief system centered on predestination and human sinfulness</span>. <span class=\"p\">It shaped the strict, work-focused culture of Puritan New England.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Mayflower Compact",
+  "date": "1620",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Mayflower Compact</span> was an <span class=\"r\">agreement among Pilgrims to govern themselves by majority rule</span>. <span class=\"p\">It became an early model of self-government and consent in the colonies.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Puritan (Great) Migration",
+  "date": "1630s",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">The Great Migration</span> brought <span class=\"r\">roughly 20,000 Puritans to New England within a decade</span>. <span class=\"p\">This wave of families quickly built a stable, growing colonial society.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Anglicization",
+  "date": "late 1600s–1700s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Anglicization</span> was the trend of <span class=\"r\">colonists adopting English fashions, goods, and customs</span>. <span class=\"p\">It tied the colonies more closely to British identity before the Revolution.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Dissenters",
+  "date": "1630s–40s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Dissenters</span> like <span class=\"r\">Roger Williams and Anne Hutchinson challenged Puritan religious authority</span>. <span class=\"p\">Their exile led to the founding of Rhode Island as a haven for religious freedom.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Dominion of New England",
+  "date": "1686–1689",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Dominion of New England</span> was <span class=\"r\">England's forced merger of colonies under one royal governor, Edmund Andros</span>. <span class=\"p\">It stripped colonial self-rule and angered New Englanders.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Glorious Revolution",
+  "date": "1688",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Glorious Revolution</span> replaced <span class=\"r\">King James II with William and Mary in a bloodless English coup</span>. <span class=\"p\">News of it let colonists overthrow the hated Dominion of New England.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Salem Witch Trials",
+  "date": "1692",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">The Salem Witch Trials</span> were <span class=\"r\">a wave of accusations and executions for witchcraft in Massachusetts</span>. <span class=\"p\">They reveal deep anxieties in Puritan society over change and instability.</span>"
+ },
+ {
+  "period": 2,
+  "module": 3,
+  "term": "Household Mode of Production",
+  "date": "1600s–1700s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The household mode of production</span> meant <span class=\"r\">families made most goods themselves for their own use, not for sale</span>. <span class=\"p\">It reflected the largely self-sufficient economy of early New England.</span>"
+ },
+ {
+  "period": 2,
+  "module": 4,
+  "term": "Sugar Colonies",
+  "date": "1600s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Caribbean sugar colonies</span> relied on <span class=\"r\">massive enslaved labor forces to grow highly profitable sugar</span>. <span class=\"p\">Their brutal, deadly labor system became a model later copied on the mainland.</span>"
+ },
+ {
+  "period": 2,
+  "module": 5,
+  "term": "Leisler's Rebellion",
+  "date": "1689–1691",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Leisler's Rebellion</span> was an <span class=\"r\">uprising in New York where Jacob Leisler seized power after the Dominion fell</span>. <span class=\"p\">It exposed sharp class and ethnic tensions within New York's colonial society.</span>"
+ },
+ {
+  "period": 2,
+  "module": 5,
+  "term": "Pennsylvania",
+  "date": "1681",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">Pennsylvania</span> was founded by <span class=\"r\">William Penn as a colony of religious tolerance and fair dealing with Native peoples</span>. <span class=\"p\">Its openness attracted a diverse mix of European settlers.</span>"
+ },
+ {
+  "period": 2,
+  "module": 5,
+  "term": "Quakers",
+  "date": "1650s–1680s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Quakers</span> believed in <span class=\"r\">an \"inner light\" in every person and practiced pacifism and equality</span>. <span class=\"p\">Their beliefs shaped Pennsylvania's unusually tolerant colonial society.</span>"
+ },
+ {
+  "period": 2,
+  "module": 6,
+  "term": "Mercantilism",
+  "date": "1600s–1700s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Mercantilism</span> held that <span class=\"r\">colonies existed to enrich the mother country through controlled trade</span>. <span class=\"p\">This belief justified British laws restricting colonial commerce.</span>"
+ },
+ {
+  "period": 2,
+  "module": 6,
+  "term": "Navigation Acts",
+  "date": "1651–1673",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Navigation Acts</span> <span class=\"r\">required colonial trade to move on English ships and through English ports</span>. <span class=\"p\">They enforced mercantilism but were often ignored through smuggling.</span>"
+ },
+ {
+  "period": 2,
+  "module": 6,
+  "term": "Consumer Revolution",
+  "date": "early–mid 1700s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Consumer Revolution</span> was a <span class=\"r\">surge in colonial buying of British manufactured goods</span>. <span class=\"p\">It tied colonists economically and culturally closer to Britain.</span>"
+ },
+ {
+  "period": 2,
+  "module": 6,
+  "term": "\"Warning Out\"",
+  "date": "1700s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">\"Warning out\"</span> was a practice of <span class=\"r\">towns legally expelling poor newcomers to avoid supporting them</span>. <span class=\"p\">It shows growing concern over poverty and social order in colonial towns.</span>"
+ },
+ {
+  "period": 2,
+  "module": 7,
+  "term": "Middle Passage",
+  "date": "1600s–1800s",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">The Middle Passage</span> was the <span class=\"r\">brutal Atlantic voyage that forcibly transported enslaved Africans to the Americas</span>. <span class=\"p\">Its horrific conditions killed a large share of captives before arrival.</span>"
+ },
+ {
+  "period": 2,
+  "module": 7,
+  "term": "Chattel Slavery",
+  "date": "1600s onward",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Chattel slavery</span> treated <span class=\"r\">enslaved people as permanent, inheritable property</span>. <span class=\"p\">This system became the foundation of the colonial and later American economy.</span>"
+ },
+ {
+  "period": 2,
+  "module": 7,
+  "term": "Slave Laws",
+  "date": "1660s–1705",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Slave laws</span> legally <span class=\"r\">defined slavery as lifelong and hereditary, based on race</span>. <span class=\"p\">These codes hardened racial slavery into a fixed, permanent system.</span>"
+ },
+ {
+  "period": 2,
+  "module": 7,
+  "term": "Stono Rebellion",
+  "date": "1739",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Stono Rebellion</span> was <span class=\"r\">South Carolina's largest slave uprising, led by enslaved Africans marching toward Florida</span>. <span class=\"p\">It led colonies to pass even harsher slave codes out of fear.</span>"
+ },
+ {
+  "period": 3,
+  "module": 1,
+  "term": "Global Wars (King William's, Queen Anne's, etc.)",
+  "date": "1689–1748",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The colonial wars</span> were <span class=\"r\">a series of conflicts between Britain and France, fought partly in North America</span>. <span class=\"p\">They deepened colonial military ties to Britain and colonial debt toward France.</span>"
+ },
+ {
+  "period": 3,
+  "module": 1,
+  "term": "Albany Plan of Union",
+  "date": "1754",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Albany Plan</span>, proposed by <span class=\"r\">Benjamin Franklin, called for a unified colonial government to coordinate defense</span>. <span class=\"p\">Colonial assemblies rejected it, but it became an early model for later unity.</span>"
+ },
+ {
+  "period": 3,
+  "module": 1,
+  "term": "Proclamation Line of 1763",
+  "date": "1763",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Proclamation Line</span> <span class=\"r\">banned colonial settlement west of the Appalachian Mountains</span>. <span class=\"p\">Colonists resented the limit, straining relations with Britain.</span>"
+ },
+ {
+  "period": 3,
+  "module": 1,
+  "term": "Pontiac's War",
+  "date": "1763",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">Pontiac's War</span> was a <span class=\"r\">Native uprising against British forts and settlers in the Great Lakes region</span>. <span class=\"p\">It pushed Britain to issue the Proclamation Line to calm tensions.</span>"
+ },
+ {
+  "period": 3,
+  "module": 1,
+  "term": "Resolution of the French & Indian War",
+  "date": "1763",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Treaty of Paris of 1763</span> <span class=\"r\">ended the French and Indian War, giving Britain nearly all French land east of the Mississippi</span>. <span class=\"p\">Britain's huge war debt led it to tax the colonies directly for the first time.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Salutary Neglect",
+  "date": "early–mid 1700s",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Salutary neglect</span> was <span class=\"r\">Britain's loose, hands-off enforcement of trade laws in the colonies</span>. <span class=\"p\">It let colonists grow used to self-government, making later British control feel like a violation.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Glorious Revolution",
+  "date": "1688",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Glorious Revolution</span> replaced <span class=\"r\">King James II with William and Mary and affirmed Parliament's power over the king</span>. <span class=\"p\">It gave colonists a language of rights they later used against Britain.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Quartering Act",
+  "date": "1765",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Quartering Act</span> <span class=\"r\">required colonies to house and supply British troops</span>. <span class=\"p\">Colonists saw it as an unfair burden imposed without their consent.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Sugar Act",
+  "date": "1764",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Sugar Act</span> <span class=\"r\">placed new taxes on sugar and molasses to raise revenue, not just regulate trade</span>. <span class=\"p\">It marked Britain's shift toward directly taxing the colonies.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Committees of Correspondence",
+  "date": "1772",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Committees of Correspondence</span> were <span class=\"r\">networks colonies used to share news and coordinate resistance to Britain</span>. <span class=\"p\">They built unity among colonies that had rarely cooperated before.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Stamp Act (and Congress)",
+  "date": "1765",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Stamp Act</span> <span class=\"r\">taxed printed materials and sparked the Stamp Act Congress, where colonies protested together</span>. <span class=\"p\">It united colonists around \"no taxation without representation.\"</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Sons of Liberty / Daughters of Liberty",
+  "date": "1765",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Sons and Daughters of Liberty</span> were <span class=\"r\">colonial groups that organized boycotts and protests against British taxes</span>. <span class=\"p\">Their activism turned scattered anger into organized resistance.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Virginia Resolves",
+  "date": "1765",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Virginia Resolves</span>, pushed by <span class=\"r\">Patrick Henry, declared Virginia's assembly alone had the right to tax Virginians</span>. <span class=\"p\">They spread the idea that only colonial assemblies could tax colonists.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Declaratory Act",
+  "date": "1766",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Declaratory Act</span> <span class=\"r\">declared Parliament's full authority to legislate for the colonies \"in all cases whatsoever\"</span>. <span class=\"p\">It followed the Stamp Act's repeal, showing Britain would not give up control.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Townshend Acts",
+  "date": "1767",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Townshend Acts</span> <span class=\"r\">taxed imported goods like glass, tea, and paper</span>. <span class=\"p\">Colonial boycotts against them showed growing coordinated resistance.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Tea Act",
+  "date": "1773",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Tea Act</span> <span class=\"r\">gave the British East India Company a monopoly on colonial tea sales</span>. <span class=\"p\">It triggered the Boston Tea Party and renewed anger over taxation.</span>"
+ },
+ {
+  "period": 3,
+  "module": 2,
+  "term": "Coercive Acts / Intolerable Acts",
+  "date": "1774",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Coercive Acts</span> <span class=\"r\">punished Massachusetts by closing Boston's port and stripping self-government</span>. <span class=\"p\">Colonists called them \"Intolerable\" and united in support of Massachusetts.</span>"
+ },
+ {
+  "period": 3,
+  "module": 3,
+  "term": "Continental Congress(es)",
+  "date": "1774–1776",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Continental Congresses</span> were <span class=\"r\">meetings of colonial delegates who coordinated resistance and eventually declared independence</span>. <span class=\"p\">They became the first shared government for all thirteen colonies.</span>"
+ },
+ {
+  "period": 3,
+  "module": 3,
+  "term": "Lord Dunmore's Proclamation",
+  "date": "1775",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Lord Dunmore's Proclamation</span> <span class=\"r\">offered freedom to enslaved people who fled their patriot owners to fight for the British</span>. <span class=\"p\">It pushed many enslaved Virginians toward the British and angered patriot slaveholders.</span>"
+ },
+ {
+  "period": 3,
+  "module": 3,
+  "term": "Native Tribes in the Revolutionary War",
+  "date": "1775–1783",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">Native nations</span> <span class=\"r\">split their support between Britain and the patriots, often to protect their own land</span>. <span class=\"p\">Most tribes sided with Britain, hoping it would limit colonial expansion west.</span>"
+ },
+ {
+  "period": 3,
+  "module": 4,
+  "term": "Battle of Saratoga",
+  "date": "October 1777",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">Saratoga</span>, a <span class=\"r\">key American victory in the Revolutionary War that stopped a British invasion from Canada</span>, was significant because <span class=\"p\">it convinced the French that the Americans could win and led to the French Alliance of 1778.</span>"
+ },
+ {
+  "period": 3,
+  "module": 4,
+  "term": "Valley Forge",
+  "date": "1777–1778",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">Valley Forge</span> was the <span class=\"r\">harsh winter camp where Washington's army trained and survived severe shortages</span>. <span class=\"p\">The army emerged more disciplined and unified, ready for renewed fighting.</span>"
+ },
+ {
+  "period": 3,
+  "module": 4,
+  "term": "Treaty of Paris (1783)",
+  "date": "1783",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Treaty of Paris</span> <span class=\"r\">formally ended the Revolutionary War and recognized American independence</span>. <span class=\"p\">It also granted the new United States land to the Mississippi River.</span>"
+ },
+ {
+  "period": 3,
+  "module": 5,
+  "term": "VA Statute for Religious Freedom",
+  "date": "1786",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Virginia Statute for Religious Freedom</span>, written by <span class=\"r\">Thomas Jefferson, separated church from state and ended religious tests</span>. <span class=\"p\">It became a model for religious liberty in the First Amendment.</span>"
+ },
+ {
+  "period": 3,
+  "module": 5,
+  "term": "Articles of Confederation",
+  "date": "1781",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Articles of Confederation</span> created a <span class=\"r\">weak national government with no power to tax or regulate trade</span>. <span class=\"p\">Its weaknesses led directly to calls for a stronger constitution.</span>"
+ },
+ {
+  "period": 3,
+  "module": 5,
+  "term": "Newburgh Conspiracy",
+  "date": "1783",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Newburgh Conspiracy</span> was a <span class=\"r\">threat by unpaid army officers to challenge civilian authority over Congress</span>. <span class=\"p\">Washington's personal appeal defused it, preserving civilian control of the military.</span>"
+ },
+ {
+  "period": 3,
+  "module": 5,
+  "term": "Western Lands Controversy",
+  "date": "1780s",
+  "theme": "Geography and Environment",
+  "html": "<span class=\"b\">The Western Lands Controversy</span> was a <span class=\"r\">dispute among states over claims to land west of the Appalachians</span>. <span class=\"p\">States ceding their claims to Congress helped the Articles finally be ratified.</span>"
+ },
+ {
+  "period": 3,
+  "module": 5,
+  "term": "Treaty of Fort Stanwix",
+  "date": "1784",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Treaty of Fort Stanwix</span> <span class=\"r\">forced the Iroquois to cede large amounts of land to the United States</span>. <span class=\"p\">It showed the new nation would expand onto Native land after the Revolution.</span>"
+ },
+ {
+  "period": 3,
+  "module": 5,
+  "term": "Northwest Ordinance",
+  "date": "1787",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Northwest Ordinance</span> <span class=\"r\">set up a process for territories to become states and banned slavery north of the Ohio River</span>. <span class=\"p\">It became a key model for how the U.S. would expand westward.</span>"
+ },
+ {
+  "period": 3,
+  "module": 6,
+  "term": "Constitutional Convention",
+  "date": "1787",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Constitutional Convention</span> met to <span class=\"r\">replace the weak Articles of Confederation with a new framework of government</span>. <span class=\"p\">Compromises there shaped the structure of Congress and the presidency.</span>"
+ },
+ {
+  "period": 3,
+  "module": 6,
+  "term": "Ratification Process",
+  "date": "1787–1790",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Ratification</span> required <span class=\"r\">nine of thirteen states to approve the new Constitution through state conventions</span>. <span class=\"p\">Fierce public debate over ratification shaped early American political parties.</span>"
+ },
+ {
+  "period": 3,
+  "module": 6,
+  "term": "Federalist and Antifederalist Papers",
+  "date": "1787–1788",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Federalist and Antifederalist Papers</span> were <span class=\"r\">essays arguing for and against ratifying the Constitution</span>. <span class=\"p\">Their debate over federal power shaped the case for adding a Bill of Rights.</span>"
+ },
+ {
+  "period": 3,
+  "module": 7,
+  "term": "Republican Motherhood",
+  "date": "1780s–1790s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Republican Motherhood</span> held that <span class=\"r\">women should raise virtuous, informed citizens for the new republic</span>. <span class=\"p\">It justified more education for women while keeping them out of formal politics.</span>"
+ },
+ {
+  "period": 3,
+  "module": 7,
+  "term": "Noah Webster",
+  "date": "1783",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Noah Webster</span> wrote <span class=\"r\">an American spelling book and later a dictionary to standardize American English</span>. <span class=\"p\">His work promoted a distinct American cultural identity apart from Britain.</span>"
+ },
+ {
+  "period": 3,
+  "module": 8,
+  "term": "Hamilton's Financial Plan",
+  "date": "1790–1791",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Hamilton's Financial Plan</span> called for the <span class=\"r\">federal government to assume state debts and create a national bank</span>. <span class=\"p\">It strengthened the federal government but sparked fierce opposition over its constitutionality.</span>"
+ },
+ {
+  "period": 3,
+  "module": 9,
+  "term": "French Revolution",
+  "date": "1789–1799",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The French Revolution</span> was a <span class=\"r\">radical uprising that overthrew the French monarchy and later turned violent</span>. <span class=\"p\">It split American politics between those who supported and feared its radicalism.</span>"
+ },
+ {
+  "period": 3,
+  "module": 9,
+  "term": "Neutrality Proclamation",
+  "date": "1793",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Neutrality Proclamation</span>, issued by <span class=\"r\">Washington, declared the U.S. would not take sides between Britain and France</span>. <span class=\"p\">It set an early precedent for American neutrality in European wars.</span>"
+ },
+ {
+  "period": 3,
+  "module": 9,
+  "term": "Whiskey Rebellion",
+  "date": "1794",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Whiskey Rebellion</span> was a <span class=\"r\">revolt by farmers against a federal tax on whiskey</span>. <span class=\"p\">Washington's forceful response showed the new federal government could enforce its laws.</span>"
+ },
+ {
+  "period": 3,
+  "module": 9,
+  "term": "Battle of Fallen Timbers",
+  "date": "1794",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Battle of Fallen Timbers</span> was a <span class=\"r\">decisive U.S. victory over a Native confederacy in the Northwest Territory</span>. <span class=\"p\">It opened much of the Ohio Valley to further American settlement.</span>"
+ },
+ {
+  "period": 3,
+  "module": 9,
+  "term": "XYZ Affair",
+  "date": "1797–1798",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The XYZ Affair</span> was a <span class=\"r\">diplomatic scandal in which French agents demanded bribes from American diplomats</span>. <span class=\"p\">It sparked outrage in America and led to an undeclared naval war with France.</span>"
+ },
+ {
+  "period": 3,
+  "module": 9,
+  "term": "Election of 1800",
+  "date": "1800",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Election of 1800</span> saw <span class=\"r\">Thomas Jefferson defeat John Adams in a bitter, close contest</span>. <span class=\"p\">It marked the first peaceful transfer of power between opposing parties.</span>"
+ },
+ {
+  "period": 3,
+  "module": 9,
+  "term": "VA and Kentucky Resolutions",
+  "date": "1798",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Virginia and Kentucky Resolutions</span> argued that <span class=\"r\">states could judge the constitutionality of federal laws, like the Alien and Sedition Acts</span>. <span class=\"p\">They introduced an early states' rights argument later used to challenge federal power.</span>"
+ }
+]

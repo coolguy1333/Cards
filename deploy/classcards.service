@@ -1,0 +1,21 @@
+[Unit]
+Description=ClassCards
+After=network.target
+
+[Service]
+Type=simple
+User=classcards
+WorkingDirectory=/opt/classcards
+Environment=NODE_ENV=production
+Environment=DB_PATH=/var/lib/classcards/classcards.db
+ExecStart=/usr/bin/node /opt/classcards/server.js
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/classcards
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,26 @@
+{
+  "type": "app",
+  "health": "/healthz",
+  "memory_mb": 256,
+  "env": [
+    {
+      "name": "SESSION_SECRET",
+      "description": "Long random string used to sign session cookies. Generate with: openssl rand -hex 32. Without it, everyone is signed out on every restart.",
+      "secret": true,
+      "required": true
+    },
+    {
+      "name": "GOOGLE_CLIENT_ID",
+      "description": "OAuth client ID from Google Cloud Console (APIs & Services > Credentials). Leave unset to disable Google sign-in."
+    },
+    {
+      "name": "GOOGLE_CLIENT_SECRET",
+      "description": "OAuth client secret from Google Cloud Console.",
+      "secret": true
+    },
+    {
+      "name": "ALLOWED_EMAILS",
+      "description": "Comma-separated Google accounts allowed to sign in. Leave empty to allow anyone with a Google account."
+    }
+  ]
+}

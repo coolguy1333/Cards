@@ -8,7 +8,8 @@ const { OAuth2Client } = require('google-auth-library');
 const db = require('./db');
 
 const PORT = Number(process.env.PORT) || 3000;
-const BASE_URL = (process.env.BASE_URL || `http://localhost:${PORT}`).replace(/\/$/, '');
+const HOST = process.env.HOST || '0.0.0.0';
+const BASE_URL = (process.env.BASE_URL || process.env.PUBLIC_URL || `http://localhost:${PORT}`).replace(/\/$/, '');
 const REDIRECT_URI = `${BASE_URL}/auth/google/callback`;
 const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
 const DEV_LOGIN = process.env.DEV_LOGIN === '1' && process.env.NODE_ENV !== 'production';
@@ -312,4 +313,9 @@ app.get('/api/export', requireUser, (req, res) => {
 app.get('/healthz', (req, res) => res.send('ok'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(PORT, () => console.log(`ClassCards running on ${BASE_URL} (port ${PORT})`));
+const server = app.listen(PORT, HOST, () => console.log(`ClassCards running on ${BASE_URL} (${HOST}:${PORT})`));
+
+process.on('SIGTERM', () => {
+  server.close(() => { db.close(); process.exit(0); });
+  setTimeout(() => process.exit(0), 8000).unref();
+});

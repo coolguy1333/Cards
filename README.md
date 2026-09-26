@@ -43,6 +43,18 @@ To test without Google, run `npm run dev`, then click **Dev sign-in**. It's disa
 
 > Google only allows `http://` for `localhost`. For anything else, use HTTPS on a real domain, for example with Caddy, nginx, or a Cloudflare Tunnel in front of the LXC.
 
+## Deploy with Docker / WebManager
+The repo ships a `Dockerfile` and `webmanager.json`. The app reads `PORT`, `HOST`, `DATA_DIR`, and `PUBLIC_URL` (used as `BASE_URL` when `BASE_URL` isn't set) — all of which WebManager sets automatically. Set `SESSION_SECRET` (required) and, to enable Google sign-in, `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET`, in the app's Variables page. The OAuth redirect URI is `<PUBLIC_URL>/auth/google/callback`.
+
+To run it manually with plain Docker:
+```bash
+docker build -t classcards .
+docker run -p 8080:8080 -v classcards-data:/data \
+  -e SESSION_SECRET=$(openssl rand -hex 32) \
+  -e PUBLIC_URL=http://localhost:8080 \
+  classcards
+```
+
 ## Deploy in a Proxmox LXC (Debian 12 / Ubuntu 24.04)
 ```bash
 git clone https://github.com/coolguy1333/Cards.git && cd Cards

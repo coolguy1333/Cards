@@ -35,6 +35,10 @@ function toast(msg) {
 async function api(url, opts = {}) {
   const res = await fetch(url, { ...opts, headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin' });
   const data = await res.json().catch(() => ({}));
+  if (res.status === 401 && me.user) {
+    toast('Your session expired. Please sign in again.');
+    setTimeout(() => location.reload(), 1500);
+  }
   if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
   return data;
 }
@@ -142,8 +146,15 @@ async function selectClass(id) {
   $('className').textContent = cls?.name || 'ClassCards';
   $('classSub').textContent = cls ? `${layoutById(cls.layoutId)?.name || ''} layout · tap a card to flip` : '';
   $('root').innerHTML = '<div class="no-results">Loading…</div>';
-  cards = cls ? await api(`/api/classes/${cls.id}/cards`) : [];
+  let loaded = [];
+  try {
+    if (cls) loaded = await api(`/api/classes/${cls.id}/cards`);
+  } catch (err) {
+    if (id === currentClassId) $('root').innerHTML = `<div class="no-results">Couldn’t load cards: ${esc(err.message)}</div>`;
+    return;
+  }
   if (id !== currentClassId) return; // user switched again while loading
+  cards = loaded;
   setupFilters();
   render();
 }
@@ -291,7 +302,8 @@ function openCardDialog(card = null) {
   $('cardTitle').textContent = `${card ? 'Edit card' : 'New card'} · ${cls.name}`;
   $('cardDelete').hidden = !card;
   $('cardError').textContent = '';
-  const remembered = JSON.parse(store.get(`classcards.last.${cls.id}`) || '{}');
+  let remembered = {};
+  try { remembered = JSON.parse(store.get(`classcards.last.${cls.id}`) || '{}') || {}; } catch { /* ignore corrupt value */ }
   $('cardFields').innerHTML = layout.fields.map(f => {
     const v = card ? card.fields[f.key] : (f.group ? (remembered[f.key] ?? '') : '');
     const attrs = `data-key="${esc(f.key)}" aria-label="${esc(f.label)}"`;

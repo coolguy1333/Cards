@@ -32,6 +32,17 @@ const oauth = GOOGLE_CLIENT_ID
 const app = express();
 app.set('trust proxy', 1); // correct protocol/IP behind nginx, Caddy, Cloudflare Tunnel, etc.
 app.disable('x-powered-by');
+app.use((req, res, next) => {
+  res.set({
+    'Content-Security-Policy': "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Referrer-Policy': 'same-origin',
+  });
+  if (BASE_URL.startsWith('https://')) res.set('Strict-Transport-Security', 'max-age=15552000');
+  if (req.path.startsWith('/api/') || req.path.startsWith('/auth/')) res.set('Cache-Control', 'no-store');
+  next();
+});
 app.use(express.json({ limit: '64kb' }));
 app.use(cookieSession({
   name: 'classcards_session',
@@ -43,9 +54,13 @@ app.use(cookieSession({
 }));
 
 // ---------- helpers ----------
-const getUser = req => req.session?.userId
-  ? db.prepare('SELECT id, email, name, picture FROM users WHERE id = ?').get(req.session.userId)
-  : null;
+const isAllowed = email => !ALLOWED_EMAILS.length || ALLOWED_EMAILS.includes(String(email).toLowerCase());
+const getUser = req => {
+  const user = req.session?.userId
+    ? db.prepare('SELECT id, email, name, picture FROM users WHERE id = ?').get(req.session.userId)
+    : null;
+  return user && isAllowed(user.email) ? user : null; // removing an email from ALLOWED_EMAILS also ends its sessions
+};
 
 function requireUser(req, res, next) {
   const user = getUser(req);
@@ -67,7 +82,7 @@ function upsertUser({ sub, email, name, picture }) {
 const COLOR_RE = /^#[0-9a-f]{6}$/i;
 const TYPES = ['text', 'long', 'number', 'date'];
 const PLACES = ['front', 'sub', 'meta', 'back'];
-const str = (v, max) => String(v ?? '').trim().slice(0, max);
+const str = (v, max) => (typeof v === 'string' || typeof v === 'number' ? String(v) : '').trim().slice(0, max);
 
 const layoutFor = (id, userId) => db.prepare(
   'SELECT * FROM layouts WHERE id = ? AND (owner_id IS NULL OR owner_id = ?)').get(id, userId ?? -1);
@@ -152,7 +167,7 @@ app.get('/auth/google/callback', async (req, res) => {
     const ticket = await oauth.verifyIdToken({ idToken: tokens.id_token, audience: GOOGLE_CLIENT_ID });
     const p = ticket.getPayload();
     if (!p.email_verified) return res.status(403).send('Your Google email is not verified.');
-    if (ALLOWED_EMAILS.length && !ALLOWED_EMAILS.includes(p.email.toLowerCase())) {
+    if (!isAllowed(p.email)) {
       return res.status(403).send('This account is not allowed on this server. <a href="/">Go back</a>');
     }
     req.session.userId = upsertUser(p);
@@ -311,11 +326,21 @@ app.get('/api/export', requireUser, (req, res) => {
 });
 
 app.get('/healthz', (req, res) => res.send('ok'));
+app.use('/api', (req, res) => res.status(404).json({ error: 'Not found.' }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  if (err.type === 'entity.too.large') return res.status(413).json({ error: 'That request is too large.' });
+  if (err.type === 'entity.parse.failed') return res.status(400).json({ error: 'Invalid request.' });
+  console.error(err);
+  res.status(500).json({ error: 'Something went wrong on the server.' });
+});
 
 const server = app.listen(PORT, HOST, () => console.log(`ClassCards running on ${BASE_URL} (${HOST}:${PORT})`));
 
-process.on('SIGTERM', () => {
+function shutdown() {
   server.close(() => { db.close(); process.exit(0); });
   setTimeout(() => process.exit(0), 8000).unref();
-});
+}
+process.on('SIGTERM', shutdown);
+process.on('SIGINT', shutdown);

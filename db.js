@@ -64,7 +64,7 @@ CREATE INDEX IF NOT EXISTS idx_layouts_owner ON layouts(owner_id);
 const BUILTIN_LAYOUTS = [
   { slug: 'apush', name: 'APUSH (Period / Module)', fields: [
     { key: 'period', label: 'Period', type: 'number', place: 'sub', group: true, names: {
-      1: '1491–1607', 2: '1607–1754', 3: '1754–1800', 4: '1800–1848', 5: '1844–1877',
+      1: '1491–1607', 2: '1607–1754', 3: '1754–1800', 4: '1800–1854', 5: '1844–1877',
       6: '1865–1898', 7: '1890–1945', 8: '1945–1980', 9: '1980–Present' } },
     { key: 'module', label: 'Module', type: 'number', place: 'sub', group: true },
     { key: 'term',   label: 'Term',   type: 'text',   place: 'front' },
@@ -104,21 +104,28 @@ db.transaction(() => {
     ON CONFLICT(slug) DO UPDATE SET name = excluded.name, fields = excluded.fields`);
   for (const l of BUILTIN_LAYOUTS) upsertLayout.run({ ...l, fields: JSON.stringify(l.fields) });
 
-  // Built-in APUSH class + cards, first run only.
-  const hasBuiltinClass = db.prepare('SELECT 1 FROM classes WHERE owner_id IS NULL').get();
-  if (!hasBuiltinClass) {
+  // Built-in APUSH class + cards. Cards missing from the database are added on every start,
+  // so new seed cards reach existing installs; existing cards are never changed.
+  let classId = db.prepare(`SELECT id FROM classes WHERE owner_id IS NULL AND name = 'APUSH'`).get()?.id;
+  if (!classId) {
     const apushLayout = db.prepare(`SELECT id FROM layouts WHERE slug = 'apush'`).get().id;
-    const classId = db.prepare(`INSERT INTO classes (owner_id, name, color, layout_id) VALUES (NULL, 'APUSH', '#2962ff', ?)`)
+    classId = db.prepare(`INSERT INTO classes (owner_id, name, color, layout_id) VALUES (NULL, 'APUSH', '#2962ff', ?)`)
       .run(apushLayout).lastInsertRowid;
-    const seed = JSON.parse(fs.readFileSync(path.join(__dirname, 'seed', 'apush-cards.json'), 'utf8'));
-    const ins = db.prepare(`INSERT INTO cards (class_id, owner_id, fields, is_html) VALUES (?, NULL, ?, 1)`);
-    for (const c of seed) {
-      ins.run(classId, JSON.stringify({
-        period: c.period, module: c.module, term: c.term, date: c.date, theme: c.theme, body: c.html,
-      }));
-    }
-    console.log(`Seeded built-in APUSH class with ${seed.length} cards.`);
   }
+  const seed = JSON.parse(fs.readFileSync(path.join(__dirname, 'seed', 'apush-cards.json'), 'utf8'));
+  const keyOf = (period, module, term) => `${period}|${module}|${term}`;
+  const have = new Set(db.prepare('SELECT fields FROM cards WHERE class_id = ? AND owner_id IS NULL').all(classId)
+    .map(r => { const f = JSON.parse(r.fields); return keyOf(f.period, f.module, f.term); }));
+  const ins = db.prepare(`INSERT INTO cards (class_id, owner_id, fields, is_html) VALUES (?, NULL, ?, 1)`);
+  let added = 0;
+  for (const c of seed) {
+    if (have.has(keyOf(c.period, c.module, c.term))) continue;
+    ins.run(classId, JSON.stringify({
+      period: c.period, module: c.module, term: c.term, date: c.date, theme: c.theme, body: c.html,
+    }));
+    added++;
+  }
+  if (added) console.log(`Added ${added} built-in APUSH cards.`);
 })();
 
 module.exports = db;

@@ -782,5 +782,453 @@
   "date": "1798",
   "theme": "Politics and Power",
   "html": "<span class=\"b\">The Virginia and Kentucky Resolutions</span> argued that <span class=\"r\">states could judge the constitutionality of federal laws, like the Alien and Sedition Acts</span>. <span class=\"p\">They introduced an early states' rights argument later used to challenge federal power.</span>"
+ },
+ {
+  "period": 4,
+  "module": 1,
+  "term": "Judiciary Act",
+  "date": "1801",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Judiciary Act of 1801</span> <span class=\"r\">created new federal judgeships that outgoing Federalist President Adams filled with \"midnight judges\"</span>. <span class=\"p\">Jefferson's Republicans repealed it in 1802, and the fight led to Marbury v. Madison (1803) and judicial review.</span>"
+ },
+ {
+  "period": 4,
+  "module": 1,
+  "term": "Embargo Act",
+  "date": "1807",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Embargo Act</span> <span class=\"r\">banned American exports to foreign ports to pressure Britain and France to respect neutral shipping rights</span>. <span class=\"p\">It hurt American merchants and farmers more than Europe, was repealed in 1809, and boosted domestic manufacturing.</span>"
+ },
+ {
+  "period": 4,
+  "module": 1,
+  "term": "National Road",
+  "date": "1811–1818",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The National Road</span> <span class=\"r\">was the first federally funded highway, running from Cumberland, Maryland west to the Ohio River</span>. <span class=\"p\">It tied the West to eastern markets and fueled the debate over federal internal improvements.</span>"
+ },
+ {
+  "period": 4,
+  "module": 1,
+  "term": "Robert Fulton",
+  "date": "1807",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Robert Fulton's steamboat, the Clermont,</span> <span class=\"r\">proved steam power could carry boats upstream on rivers</span>. <span class=\"p\">Steamboats cut shipping time and costs and sped up western trade along the Mississippi and Ohio Rivers.</span>"
+ },
+ {
+  "period": 4,
+  "module": 1,
+  "term": "Cotton Gin",
+  "date": "1793",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Eli Whitney's cotton gin</span> <span class=\"r\">quickly separated seeds from short-staple cotton, making it hugely profitable to grow</span>. <span class=\"p\">Cotton exploded across the Deep South, and the demand for enslaved labor and the spread of slavery grew with it.</span>"
+ },
+ {
+  "period": 4,
+  "module": 1,
+  "term": "Act of 1807 (International Slave Trade Act)",
+  "date": "1807–1808",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Act Prohibiting Importation of Slaves</span> <span class=\"r\">banned bringing enslaved Africans into the U.S. starting January 1, 1808, the earliest date the Constitution allowed</span>. <span class=\"p\">Smuggling continued, and the domestic slave trade grew as enslavers sold people from the Upper South to the Deep South.</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "Non Intercourse Act",
+  "date": "1809",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Non-Intercourse Act</span> <span class=\"r\">replaced the Embargo Act by reopening trade with every nation except Britain and France</span>. <span class=\"p\">It failed to change British or French policy, and tensions kept rising toward the War of 1812.</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "Battle of Fallen Timbers",
+  "date": "1794",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">At the Battle of Fallen Timbers,</span> <span class=\"r\">General Anthony Wayne defeated a Native confederacy in the Northwest Territory</span>. <span class=\"p\">The Treaty of Greenville (1795) forced them to give up most of Ohio, opening it to settlers and fueling later resistance such as Tecumseh's.</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "Treaty of Ghent",
+  "date": "1814",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Treaty of Ghent</span> <span class=\"r\">ended the War of 1812 and restored pre-war borders without addressing impressment</span>. <span class=\"p\">Along with Jackson's victory at New Orleans, it created a surge of national pride and the \"Era of Good Feelings.\"</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "Hartford Convention",
+  "date": "1814–1815",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">At the Hartford Convention,</span> <span class=\"r\">New England Federalists met in secret to protest the War of 1812 and proposed constitutional amendments to limit Southern and Republican power</span>. <span class=\"p\">News of the war's end made them look unpatriotic, and the Federalist Party collapsed.</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "American System",
+  "date": "1815–1824",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Henry Clay's American System</span> <span class=\"r\">combined a protective tariff, a national bank, and federally funded internal improvements</span>. <span class=\"p\">It aimed to build a self-sufficient national economy and boost nationalism, but it divided North, South, and West.</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "Erie Canal",
+  "date": "1825",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Erie Canal</span> <span class=\"r\">connected the Hudson River to Lake Erie, linking New York City to the Great Lakes</span>. <span class=\"p\">Shipping costs plunged, New York became the nation's commercial hub, and a canal-building boom followed.</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "Monroe Doctrine",
+  "date": "1823",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The Monroe Doctrine</span> <span class=\"r\">warned European powers not to colonize or intervene in the Western Hemisphere, while the U.S. would stay out of European affairs</span>. <span class=\"p\">Written largely by John Quincy Adams, it was backed by British naval power and later justified U.S. expansion.</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "Panic of 1819",
+  "date": "1819",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Panic of 1819</span> <span class=\"r\">was the first major depression, caused by land speculation, falling crop prices, and the Second Bank tightening credit</span>. <span class=\"p\">Foreclosures and unemployment spread, and many westerners and workers distrusted banks.</span>"
+ },
+ {
+  "period": 4,
+  "module": 2,
+  "term": "Missouri Compromise",
+  "date": "1820",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Missouri Compromise</span> <span class=\"r\">admitted Missouri as a slave state and Maine as a free state, and banned slavery north of 36°30′ in the Louisiana Purchase</span>. <span class=\"p\">It paused the sectional fight over slavery's expansion until the Kansas-Nebraska Act (1854) overturned it.</span>"
+ },
+ {
+  "period": 4,
+  "module": 3,
+  "term": "Market Revolution",
+  "date": "1815–1850",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Market Revolution</span> <span class=\"r\">shifted the economy from local, household production to factories, wage labor, and a national market</span>. <span class=\"p\">It created regional specialization (Northern industry, Southern cotton, Western food), growing cities, and new class divisions.</span>"
+ },
+ {
+  "period": 4,
+  "module": 3,
+  "term": "Transportation Revolution",
+  "date": "1810s–1850s",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Transportation Revolution</span> <span class=\"r\">of roads, canals, steamboats, and railroads sharply cut the cost and time of moving goods and people</span>. <span class=\"p\">It linked distant markets, drew settlers west, and made cities grow.</span>"
+ },
+ {
+  "period": 4,
+  "module": 3,
+  "term": "1830s and 1840s immigration",
+  "date": "1830s–1850s",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">Millions of Irish and German immigrants</span> <span class=\"r\">came in the 1830s and 1840s, many Irish fleeing the potato famine</span>. <span class=\"p\">They provided cheap labor for factories and canals, settled mostly in Northern cities, and set off nativist backlash.</span>"
+ },
+ {
+  "period": 4,
+  "module": 3,
+  "term": "Mutual Aid Societies",
+  "date": "early–mid 1800s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Mutual aid societies</span> <span class=\"r\">were immigrant and working-class groups (including free Black communities) that pooled money for burials, sickness, and emergencies</span>. <span class=\"p\">They helped newcomers adjust and preserved ethnic and community identity.</span>"
+ },
+ {
+  "period": 4,
+  "module": 3,
+  "term": "Temperance",
+  "date": "1820s–1850s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">The temperance movement</span> <span class=\"r\">urged people to drink less or ban alcohol, blaming it for poverty and family violence</span>. <span class=\"p\">Rooted in the Second Great Awakening and led largely by women, it won state laws such as the Maine Law (1851).</span>"
+ },
+ {
+  "period": 4,
+  "module": 3,
+  "term": "Middle class",
+  "date": "1820s–1850s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">The growing middle class</span> <span class=\"r\">of merchants, professionals, and clerks earned its living from non-manual work</span>. <span class=\"p\">It valued respectability, education, and domestic life, and supplied many leaders of reform movements.</span>"
+ },
+ {
+  "period": 4,
+  "module": 3,
+  "term": "Cult of domesticity",
+  "date": "1820s–1860",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">The cult of domesticity</span> <span class=\"r\">idealized women as pious, pure guardians of the home and of their children's morals</span>. <span class=\"p\">It limited women's roles, but moral authority at home also gave women a base for reform work.</span>"
+ },
+ {
+  "period": 4,
+  "module": 3,
+  "term": "Separate spheres",
+  "date": "1820s–1860",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">The ideology of separate spheres</span> <span class=\"r\">held that men belonged in the public world of work and politics and women in the private world of home</span>. <span class=\"p\">Growing out of the market revolution, it was used to deny women the vote and was challenged at Seneca Falls (1848).</span>"
+ },
+ {
+  "period": 4,
+  "module": 4,
+  "term": "Universal White Male Suffrage",
+  "date": "1820s–1840s",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Universal white male suffrage</span> <span class=\"r\">spread as states dropped property requirements for voting</span>. <span class=\"p\">It expanded democracy and fueled Jacksonian politics, while women, free Black men in many states, and Native Americans stayed excluded.</span>"
+ },
+ {
+  "period": 4,
+  "module": 4,
+  "term": "“Corrupt Bargain”",
+  "date": "1824–1825",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">In the \"Corrupt Bargain,\" the House picked John Quincy Adams</span> <span class=\"r\">after the 1824 election had no electoral majority, and Adams then named Speaker Henry Clay Secretary of State</span>. <span class=\"p\">Jackson's supporters, who said he won the popular vote, cried foul, which powered his win in 1828.</span>"
+ },
+ {
+  "period": 4,
+  "module": 4,
+  "term": "Tariff of 1828",
+  "date": "1828",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">The Tariff of 1828, the \"Tariff of Abominations,\"</span> <span class=\"r\">set high taxes on imports that protected Northern manufacturers but raised prices for the South</span>. <span class=\"p\">It angered South Carolina and led to Calhoun's theory of nullification.</span>"
+ },
+ {
+  "period": 4,
+  "module": 4,
+  "term": "“Petticoat Affair”",
+  "date": "1829–1831",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">In the \"Petticoat Affair,\" Washington society snubbed Peggy Eaton,</span> <span class=\"r\">wife of Jackson's Secretary of War, and Jackson defended her</span>. <span class=\"p\">It split his cabinet, pushed him to reorganize it in 1831, and boosted Martin Van Buren over John C. Calhoun.</span>"
+ },
+ {
+  "period": 4,
+  "module": 4,
+  "term": "Spoils system",
+  "date": "1829–1830s",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The spoils system</span> <span class=\"r\">meant Jackson rewarded political supporters with government jobs and rotated officeholders</span>. <span class=\"p\">He said it opened government to ordinary people, but critics saw patronage and corruption (reformed by the Pendleton Act, 1883).</span>"
+ },
+ {
+  "period": 4,
+  "module": 5,
+  "term": "Nullification",
+  "date": "1828–1833",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">Nullification</span> <span class=\"r\">was the idea, argued by John C. Calhoun, that a state could declare a federal law void within its borders</span>. <span class=\"p\">South Carolina nullified the tariffs of 1828 and 1832, and Jackson rejected the doctrine in the Nullification Crisis.</span>"
+ },
+ {
+  "period": 4,
+  "module": 5,
+  "term": "Force Bill",
+  "date": "1833",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Force Bill</span> <span class=\"r\">authorized Jackson to use the military to enforce federal tariff laws in South Carolina</span>. <span class=\"p\">It passed alongside Clay's Compromise Tariff of 1833, which lowered rates, and ended the crisis while leaving the states' rights question open.</span>"
+ },
+ {
+  "period": 4,
+  "module": 5,
+  "term": "“Monster Bank”",
+  "date": "1832–1836",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">Jackson called the Second Bank of the United States a \"monster\"</span> <span class=\"r\">he saw as an elitist, unconstitutional institution that favored the rich</span>. <span class=\"p\">He vetoed its recharter in 1832 and moved federal funds to state \"pet banks,\" feeding inflation and the Panic of 1837.</span>"
+ },
+ {
+  "period": 4,
+  "module": 5,
+  "term": "Texan Revolution",
+  "date": "1835–1836",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">In the Texan Revolution,</span> <span class=\"r\">American settlers in Mexican Texas rebelled against Santa Anna's centralized rule and Mexican limits on slavery and immigration</span>. <span class=\"p\">Texas won independence at San Jacinto but was not annexed until 1845 because of the slavery debate.</span>"
+ },
+ {
+  "period": 4,
+  "module": 5,
+  "term": "Indian Removal Act",
+  "date": "1830",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">The Indian Removal Act</span> <span class=\"r\">let the president trade Native lands in the East for territory west of the Mississippi</span>. <span class=\"p\">It led to forced removals, including the Cherokee Trail of Tears (1838), even after Worcester v. Georgia (1832).</span>"
+ },
+ {
+  "period": 4,
+  "module": 5,
+  "term": "Rise of the Whigs",
+  "date": "1830s–1840",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Whig Party</span> <span class=\"r\">formed to oppose \"King Andrew\" Jackson and favored Congress over the president and the American System</span>. <span class=\"p\">It won the 1840 election with William Henry Harrison and made up the Second Party System with the Democrats.</span>"
+ },
+ {
+  "period": 4,
+  "module": 6,
+  "term": "King Cotton",
+  "date": "1830s–1860",
+  "theme": "Work, Exchange, and Technology",
+  "html": "<span class=\"b\">\"King Cotton\" meant</span> <span class=\"r\">cotton was the South's main crop and made up more than half of U.S. exports</span>. <span class=\"p\">Southerners used it to argue slavery and Southern power were essential, and it pushed them to expand slavery westward.</span>"
+ },
+ {
+  "period": 4,
+  "module": 6,
+  "term": "Rise of African American Culture",
+  "date": "early–mid 1800s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">African American culture grew</span> <span class=\"r\">through spirituals, African-influenced Christianity, strong family bonds, and independent Black churches like the AME Church</span>. <span class=\"p\">It helped enslaved and free Black people build community and resist, and fed abolitionism.</span>"
+ },
+ {
+  "period": 4,
+  "module": 6,
+  "term": "Denmark Vesey",
+  "date": "1822",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Denmark Vesey, a free Black carpenter,</span> <span class=\"r\">planned a large slave rebellion in Charleston, South Carolina, that was betrayed before it began</span>. <span class=\"p\">About 35 people were executed, and Southern states tightened slave codes and restrictions on free Black people.</span>"
+ },
+ {
+  "period": 4,
+  "module": 6,
+  "term": "Nat Turner",
+  "date": "1831",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Nat Turner, an enslaved preacher,</span> <span class=\"r\">led a revolt in Southampton County, Virginia, that killed about 55 white people</span>. <span class=\"p\">White mobs killed many Black people, and the South passed harsher slave laws and silenced debate about emancipation.</span>"
+ },
+ {
+  "period": 4,
+  "module": 6,
+  "term": "Abolition",
+  "date": "1830s–1860s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Abolitionism</span> <span class=\"r\">called for ending slavery, many demanding immediate emancipation</span>. <span class=\"p\">Rooted in the Second Great Awakening, it deepened sectional conflict, and the South answered with the House \"gag rule\" (1836–1844).</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Noah Webster",
+  "date": "1783–1828",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Noah Webster</span> <span class=\"r\">wrote the Blue-Backed Speller and the American Dictionary of the English Language (1828)</span>. <span class=\"p\">He standardized American spelling and promoted cultural independence from Britain.</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Romanticism",
+  "date": "1820s–1850s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Romanticism</span> <span class=\"r\">stressed emotion, individualism, imagination, and nature over reason</span>. <span class=\"p\">It inspired the Hudson River School painters and writers like Poe, Hawthorne, and Melville, and shaped Transcendentalism.</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Washington Irving",
+  "date": "1819–1820",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Washington Irving</span> <span class=\"r\">wrote \"Rip Van Winkle\" and \"The Legend of Sleepy Hollow\" in The Sketch Book</span>. <span class=\"p\">He was one of the first American authors with an international audience and helped create a distinct American literature.</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Second Great Awakening",
+  "date": "1790s–1840s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">The Second Great Awakening</span> <span class=\"r\">was a wave of Protestant revivals led by preachers like Charles Finney, stressing free will and personal salvation</span>. <span class=\"p\">It boosted Baptist and Methodist membership and sparked reform movements like temperance and abolition.</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Mormons",
+  "date": "1830–1847",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Joseph Smith</span> <span class=\"r\">founded the Church of Jesus Christ of Latter-day Saints in New York in 1830, and followers were persecuted and moved west</span>. <span class=\"p\">After Smith was killed in 1844, Brigham Young led them to Utah, helping settle the West.</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Transcendentalists",
+  "date": "1830s–1850s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Transcendentalists like Emerson and Thoreau</span> <span class=\"r\">believed in individual intuition, self-reliance, and the divinity of nature and each person</span>. <span class=\"p\">They criticized materialism and conformity, and Thoreau's \"Civil Disobedience\" (1849) inspired later protest.</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Moral Reform",
+  "date": "1820s–1850s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Moral reform movements</span> <span class=\"r\">sought to improve society through temperance, public schools, prison and asylum reform, abolition, and women's rights</span>. <span class=\"p\">Driven by the Second Great Awakening and the middle class, they expanded women's public roles.</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Nativism",
+  "date": "1830s–1850s",
+  "theme": "Migration and Settlement",
+  "html": "<span class=\"b\">Nativism</span> <span class=\"r\">was hostility toward immigrants, especially Catholic Irish and Germans</span>. <span class=\"p\">It led to riots and the Know-Nothing (American) Party in the 1850s.</span>"
+ },
+ {
+  "period": 4,
+  "module": 7,
+  "term": "Utopian Communities",
+  "date": "1820s–1850s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Utopian communities</span> <span class=\"r\">like New Harmony, Brook Farm, Oneida, and the Shakers tried to build ideal societies apart from the market economy</span>. <span class=\"p\">Most were short-lived, but they showed how widely people sought reform.</span>"
+ },
+ {
+  "period": 4,
+  "module": 8,
+  "term": "David Walker",
+  "date": "1829",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">David Walker, a free Black abolitionist in Boston,</span> <span class=\"r\">published his Appeal to the Colored Citizens of the World, urging resistance to slavery</span>. <span class=\"p\">Southern states banned it, and it alarmed the South and radicalized abolitionism.</span>"
+ },
+ {
+  "period": 4,
+  "module": 8,
+  "term": "William Lloyd Garrison",
+  "date": "1831–1833",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">William Lloyd Garrison</span> <span class=\"r\">founded the newspaper The Liberator (1831) and the American Anti-Slavery Society (1833), demanding immediate emancipation</span>. <span class=\"p\">His uncompromising tone inspired many abolitionists but also split the movement.</span>"
+ },
+ {
+  "period": 4,
+  "module": 8,
+  "term": "Grimke Sisters",
+  "date": "1830s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Sarah and Angelina Grimké,</span> <span class=\"r\">daughters of a South Carolina slaveholder, became abolitionists and spoke publicly against slavery</span>. <span class=\"p\">Criticism of their public speaking pushed them to link abolition with women's rights.</span>"
+ },
+ {
+  "period": 4,
+  "module": 8,
+  "term": "Frederick Douglass",
+  "date": "1838–1860s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">Frederick Douglass</span> <span class=\"r\">escaped slavery, wrote his Narrative (1845), and published the North Star newspaper</span>. <span class=\"p\">He was a leading abolitionist voice and proof of Black intellectual capacity, and he also backed women's rights at Seneca Falls.</span>"
+ },
+ {
+  "period": 4,
+  "module": 8,
+  "term": "“Come outer” movement",
+  "date": "1830s–1840s",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">The \"come-outers\"</span> <span class=\"r\">were radical reformers who left churches and groups they saw as tolerating slavery</span>. <span class=\"p\">They put moral purity ahead of compromise, which shows how split the movement was.</span>"
+ },
+ {
+  "period": 4,
+  "module": 8,
+  "term": "Declaration of Sentiments",
+  "date": "1848",
+  "theme": "Culture and Society",
+  "html": "<span class=\"b\">The Declaration of Sentiments</span> <span class=\"r\">was written by Elizabeth Cady Stanton and others at Seneca Falls, modeled on the Declaration of Independence, saying \"all men and women are created equal\"</span>. <span class=\"p\">It launched the organized women's rights movement and called for women's suffrage.</span>"
+ },
+ {
+  "period": 4,
+  "module": 8,
+  "term": "Anti Slavery Parties",
+  "date": "1840–1854",
+  "theme": "Politics and Power",
+  "html": "<span class=\"b\">The Liberty Party (1840) and the Free-Soil Party (1848)</span> <span class=\"r\">brought the fight against slavery and its expansion into politics</span>. <span class=\"p\">They led to the Republican Party (1854) and drew votes away from Whigs.</span>"
+ },
+ {
+  "period": 4,
+  "module": 9,
+  "term": "French Revolution",
+  "date": "1789–1815",
+  "theme": "America in the World",
+  "html": "<span class=\"b\">The French Revolution and the Napoleonic Wars</span> <span class=\"r\">set Britain and France at war and divided Americans, with Republicans favoring France and Federalists favoring Britain</span>. <span class=\"p\">American neutrality was challenged by impressment and seizures, which led to the Embargo Act and the War of 1812.</span>"
  }
 ]

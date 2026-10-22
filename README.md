@@ -2,7 +2,7 @@
 
 Flashcards for any class. It has **Google sign-in**, a **local SQLite database**, **multiple classes**, and **custom card layouts**.
 
-- **Classes**: each class (APUSH, AP Bio, Spanish…) has its own name, color, and card layout. It ships with a built-in **APUSH** class that has 98 cards (Periods 1–3).
+- **Classes**: each class (APUSH, AP Bio, Spanish…) has its own name, color, and card layout. It ships with a built-in **APUSH** class that has 154 cards (Periods 1–4).
 - **Layouts** set which fields a card has and where each one shows. There are 5 built-in layouts: APUSH, Term & Definition, Vocabulary, Question & Answer, and Formula. You can also build your own or duplicate and change a built-in one.
 - **Make and save cards**: sign in with Google, pick a class, and click **+ New card**. You get a live preview while you type. Your cards and classes are private to your account.
 - Search, section filters (from the layout's "Sections" fields), a year filter (for Date fields), and Study Mode with shuffle (← → move, Space flip, Esc close).
